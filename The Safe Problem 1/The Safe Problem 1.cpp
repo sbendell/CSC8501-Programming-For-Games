@@ -7,27 +7,21 @@
 
 using namespace std;
 
-void UnlockHash(CombinationLock& lock) {
-	int hash[4] = { +1, -1, +1, -1 };
-
+void UnlockHash(CombinationLock& lock, int hash[]) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetCN(lock.GetROOT(i) + hash[i], i);
 	}
 }
 
-void LockHash(CombinationLock& lock) {
-	int hash[4] = { +1, -1, +1, -1 };
-
+void LockHash(CombinationLock& lock, int hash[]) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetLN(lock.GetCN(i) + hash[i], i);
 	}
 }
 
-void PassHash(CombinationLock& lock) {
-	int hash[4] = { +1, -1, +1, -1 };
-
+void PassHash(CombinationLock& lock, int hash[]) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetHN(lock.GetLN(i) + hash[i], i);
@@ -38,10 +32,11 @@ int main()
 {
 	int arr[4] = { 6, 7, 8, 9 };
 	CombinationLock firstLock(4, arr);
+	int hash[4] = { +1, -1, +1, -1 };
 
-	UnlockHash(firstLock);
-	LockHash(firstLock);
-	PassHash(firstLock);
+	UnlockHash(firstLock, hash);
+	LockHash(firstLock, hash);
+	PassHash(firstLock, hash);
 
 	cout << "Root: ";
 	for (int i = 0; i < firstLock.GetSize(); i++)

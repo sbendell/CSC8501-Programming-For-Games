@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "CombinationLock.h"
 
-void UnlockHashFunction(CombinationLock lock) {
+void UnlockHash(CombinationLock lock) {
 	int hash[4] = { +1, -1, +1, -1 };
 
 	for (int i = 0; i < lock.GetSize(); i++)
@@ -13,7 +13,7 @@ void UnlockHashFunction(CombinationLock lock) {
 	}
 }
 
-void LockHashFunction(CombinationLock lock) {
+void LockHash(CombinationLock lock) {
 	int hash[4] = { +1, -1, +1, -1 };
 
 	for (int i = 0; i < lock.GetSize(); i++)
@@ -22,7 +22,7 @@ void LockHashFunction(CombinationLock lock) {
 	}
 }
 
-void PassHashFunction(CombinationLock lock) {
+void PassHash(CombinationLock lock) {
 	int hash[4] = { +1, -1, +1, -1 };
 
 	for (int i = 0; i < lock.GetSize(); i++)

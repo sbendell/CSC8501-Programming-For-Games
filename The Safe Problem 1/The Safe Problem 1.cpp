@@ -13,12 +13,22 @@ void UnlockHashFunction(CombinationLock lock) {
 	}
 }
 
-void LockHashFunction() {
+void LockHashFunction(CombinationLock lock) {
+	int hash[4] = { +1, -1, +1, -1 };
 
+	for (int i = 0; i < lock.GetSize(); i++)
+	{
+		lock.SetLN(lock.GetCN(i) + hash[i], i);
+	}
 }
 
-void PassHashFunction() {
+void PassHashFunction(CombinationLock lock) {
+	int hash[4] = { +1, -1, +1, -1 };
 
+	for (int i = 0; i < lock.GetSize(); i++)
+	{
+		lock.SetHN(lock.GetLN(i) + hash[i], i);
+	}
 }
 
 int main()

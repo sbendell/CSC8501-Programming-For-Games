@@ -44,15 +44,33 @@ int main()
 	srand(time(NULL));
 	int* root = RandomArray(4, 9, 0);
 	CombinationLock firstLock(4, root);
-	int* UHF = RandomArray(4, 9, 0);
-	int* LHF = RandomArray(4, 9, 0);
-	int* PHF = RandomArray(4, 9, 0);
+	int* UHF = RandomArray(4, 9, -9);
+	int* LHF = RandomArray(4, 9, -9);
+	int* PHF = RandomArray(4, 9, -9);
 
 	UnlockHash(firstLock, UHF);
 	LockHash(firstLock, LHF);
 	PassHash(firstLock, PHF);
 
-	cout << "Root: ";
+	cout << "UHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		cout << UHF[i] << " ";
+	}
+
+	cout << "\nLHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		cout << LHF[i] << " ";
+	}
+
+	cout << "\nPHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		cout << PHF[i] << " ";
+	}
+
+	cout << "\nRoot: ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
 	{
 		cout << firstLock.GetROOT(i) << " ";
@@ -75,6 +93,8 @@ int main()
 	{
 		cout << firstLock.GetHN(i) << " ";
 	}
+
+	cout << "\nValid? " << firstLock.IsValid();
 
 	int x;
 	cin >> x;

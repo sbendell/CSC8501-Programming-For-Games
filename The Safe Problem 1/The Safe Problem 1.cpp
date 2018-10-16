@@ -94,6 +94,8 @@ int main()
 		cout << firstLock.GetHN(i) << " ";
 	}
 
+	cout << "\nValid? " << firstLock.IsValid();
+
 	int x;
 	cin >> x;
 

@@ -15,6 +15,7 @@ public:
 	void SetCN(const int value, const int position);
 	void SetLN(const int value, const int position);
 	void SetHN(const int value, const int position);
+	bool IsValid();
 private:
 	int size;
 	int ROOT[4];

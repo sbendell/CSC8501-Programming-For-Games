@@ -61,3 +61,19 @@ void CombinationLock::SetHN(const int value, const int position) {
 	}
 	HN[position] = newVal;
 }
+
+bool CombinationLock::IsValid() {
+	bool valid = true;
+	for (int i = 0; i < size; i++)
+	{
+		for (int k = 0; k < size; k++)
+		{
+			if (i != k) {
+				if (CN[i] == CN[k]) {
+					valid = false;
+				}
+			}
+		}
+	}
+	return valid;
+}

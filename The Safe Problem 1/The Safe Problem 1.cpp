@@ -28,6 +28,8 @@ int main()
 
 	MultiLockSafe firstSafe(1, 4, root, UHF, LHF, PHF);
 
+	cout << firstSafe;
+
 	int x;
 	cin >> x;
 

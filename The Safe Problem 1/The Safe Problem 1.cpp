@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "CombinationLock.h"
 #include <iostream>
+#include <time.h>
+#include <random>
 
 using namespace std;
 
@@ -28,15 +30,27 @@ void PassHash(CombinationLock& lock, int hash[]) {
 	}
 }
 
+int* RandomArray(int size, int upperbound, int lowerbound) {
+	int* newArray = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		newArray[i] = rand() % (upperbound + 1 - lowerbound) + lowerbound;
+	}
+	return newArray;
+}
+
 int main()
 {
-	int arr[4] = { 6, 7, 8, 9 };
-	CombinationLock firstLock(4, arr);
-	int hash[4] = { +1, -1, +1, -1 };
+	srand(time(NULL));
+	int* root = RandomArray(4, 9, 0);
+	CombinationLock firstLock(4, root);
+	int* UHF = RandomArray(4, 9, 0);
+	int* LHF = RandomArray(4, 9, 0);
+	int* PHF = RandomArray(4, 9, 0);
 
-	UnlockHash(firstLock, hash);
-	LockHash(firstLock, hash);
-	PassHash(firstLock, hash);
+	UnlockHash(firstLock, UHF);
+	LockHash(firstLock, LHF);
+	PassHash(firstLock, PHF);
 
 	cout << "Root: ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
@@ -64,6 +78,11 @@ int main()
 
 	int x;
 	cin >> x;
+
+	delete[] root;
+	delete[] UHF;
+	delete[] LHF;
+	delete[] PHF;
 
     return 0;
 }

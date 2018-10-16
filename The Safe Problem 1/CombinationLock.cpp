@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CombinationLock.h"
 
-CombinationLock::CombinationLock(int Size, int Root[])
+CombinationLock::CombinationLock(int Size, int* Root)
 {
 	size = Size;
 	for (int i = 0; i < size; i++)

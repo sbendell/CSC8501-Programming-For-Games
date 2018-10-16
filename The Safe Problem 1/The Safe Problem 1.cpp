@@ -26,7 +26,7 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	MultiLockSafe firstSafe(1, 4, root, UHF, LHF, PHF);
+	MultiLockSafe firstSafe(5, 4, root, UHF, LHF, PHF);
 
 	cout << firstSafe;
 

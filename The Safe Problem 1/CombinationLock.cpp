@@ -45,7 +45,7 @@ ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
 		ostr << cl.GetHN(i) << " ";
 	}
 
-	//ostr << "\nValid? " << cl.IsValid();
+	ostr << "\nValid? " << cl.IsValid();
 
 	return ostr;
 }
@@ -94,7 +94,7 @@ void CombinationLock::SetHN(const int value, const int position) {
 	HN[position] = newVal;
 }
 
-bool CombinationLock::IsValid() {
+bool CombinationLock::IsValid() const {
 	bool valid = true;
 	for (int i = 0; i < size; i++)
 	{

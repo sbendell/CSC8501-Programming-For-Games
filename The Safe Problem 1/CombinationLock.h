@@ -18,7 +18,7 @@ public:
 	void SetCN(const int value, const int position);
 	void SetLN(const int value, const int position);
 	void SetHN(const int value, const int position);
-	bool IsValid();
+	bool IsValid() const;
 	friend ostream& operator<<(ostream& ostr, const CombinationLock& cl);
 private:
 	int size;

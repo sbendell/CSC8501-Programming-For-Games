@@ -9,12 +9,18 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 	LHF = Lhf;
 	PHF = Phf;
 
+	int * nextRoot = root;
+
 	for (int i = 0; i < size; i++)
 	{
-		locks[i] = new CombinationLock(lockSize, root);
+		locks[i] = new CombinationLock(lockSize, nextRoot);
 		UnlockHash(locks[i], UHF);
 		LockHash(locks[i], LHF);
 		PassHash(locks[i], PHF);
+		for (int x = 0; x < lockSize; x++)
+		{
+			nextRoot[x] = locks[i]->GetHN(x);
+		}
 	}
 }
 
@@ -28,30 +34,27 @@ MultiLockSafe::~MultiLockSafe()
 }
 
 ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
+	ostr << "UHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		ostr << mls.UHF[i] << " ";
+	}
+
+	ostr << "\nLHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		ostr << mls.LHF[i] << " ";
+	}
+
+	ostr << "\nPHF: ";
+	for (int i = 0; i < 4; i++)
+	{
+		ostr << mls.PHF[i] << " ";
+	}
+
 	for (int i = 0; i < mls.size; i++)
 	{
-		ostr << "UHF: ";
-		for (int i = 0; i < 4; i++)
-		{
-			ostr << mls.UHF[i] << " ";
-		}
-
-		ostr << "\nLHF: ";
-		for (int i = 0; i < 4; i++)
-		{
-			ostr << mls.LHF[i] << " ";
-		}
-
-		ostr << "\nPHF: ";
-		for (int i = 0; i < 4; i++)
-		{
-			ostr << mls.PHF[i] << " ";
-		}
-
-		for (int i = 0; i < mls.size; i++)
-		{
-			ostr << *mls.locks[i] << "\n\n";
-		}
+		ostr << *mls.locks[i] << "\n\n";
 	}
 	return ostr;
 }

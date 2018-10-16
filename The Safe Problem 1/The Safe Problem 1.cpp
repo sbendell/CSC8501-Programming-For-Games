@@ -41,25 +41,25 @@ int main()
 	cout << "Root: ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
 	{
-		cout << firstLock.GetROOT(i);
+		cout << firstLock.GetROOT(i) << " ";
 	}
 
-	cout << "\nCN: ";
+	cout << "\nCN:   ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
 	{
-		cout << firstLock.GetCN(i);
+		cout << firstLock.GetCN(i) << " ";
 	}
 
-	cout << "\nLN: ";
+	cout << "\nLN:   ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
 	{
-		cout << firstLock.GetLN(i);
+		cout << firstLock.GetLN(i) << " ";
 	}
 
-	cout << "\nHN: ";
+	cout << "\nHN:   ";
 	for (int i = 0; i < firstLock.GetSize(); i++)
 	{
-		cout << firstLock.GetHN(i);
+		cout << firstLock.GetHN(i) << " ";
 	}
 
 	int x;

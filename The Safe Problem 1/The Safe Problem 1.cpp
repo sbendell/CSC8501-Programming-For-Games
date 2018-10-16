@@ -2,28 +2,28 @@
 //
 
 #include "stdafx.h"
-#include "CombinationLock.h"
+#include "MultiLockSafe.h"
 #include <iostream>
 #include <time.h>
 #include <random>
 
 using namespace std;
 
-void UnlockHash(CombinationLock& lock, int hash[]) {
+void UnlockHash(CombinationLock& lock, int* hash) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetCN(lock.GetROOT(i) + hash[i], i);
 	}
 }
 
-void LockHash(CombinationLock& lock, int hash[]) {
+void LockHash(CombinationLock& lock, int* hash) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetLN(lock.GetCN(i) + hash[i], i);
 	}
 }
 
-void PassHash(CombinationLock& lock, int hash[]) {
+void PassHash(CombinationLock& lock, int* hash) {
 	for (int i = 0; i < lock.GetSize(); i++)
 	{
 		lock.SetHN(lock.GetLN(i) + hash[i], i);
@@ -43,7 +43,7 @@ int main()
 {
 	srand(time(NULL));
 	int* root = RandomArray(4, 9, 0);
-	CombinationLock firstLock(4, root);
+	MultiLockSafe firstSafe(1, 4, root);
 	int* UHF = RandomArray(4, 9, -9);
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);

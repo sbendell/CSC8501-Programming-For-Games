@@ -27,6 +27,9 @@
     <ClInclude Include="CombinationLock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MultiLockSafe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CombinationLock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiLockSafe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

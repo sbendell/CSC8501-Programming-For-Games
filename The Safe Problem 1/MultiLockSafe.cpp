@@ -1,23 +1,30 @@
 #include "stdafx.h"
 #include "MultiLockSafe.h"
 
-
 MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* Lhf, int* Phf)
 {
 	size = Size;
-	locks = new CombinationLock[size];
-	for (int i = 0; i < size; i++)
-	{
-		locks[i] = CombinationLock(lockSize, root);
-	}
+	locks = new CombinationLock*[size];
 	UHF = Uhf;
 	LHF = Lhf;
 	PHF = Phf;
+
+	for (int i = 0; i < size; i++)
+	{
+		locks[i] = new CombinationLock(lockSize, root);
+		UnlockHash(locks[i], UHF);
+		LockHash(locks[i], LHF);
+		PassHash(locks[i], PHF);
+	}
 }
 
 
 MultiLockSafe::~MultiLockSafe()
 {
+	for (int i = 0; i < size; i++)
+	{
+		delete locks[i];
+	}
 }
 
 ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
@@ -41,31 +48,10 @@ ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
 			ostr << mls.PHF[i] << " ";
 		}
 
-		ostr << "\nRoot: ";
-		for (int i = 0; i < mls.locks[i].GetSize(); i++)
+		for (int i = 0; i < mls.size; i++)
 		{
-			ostr << mls.locks[i].GetROOT(i) << " ";
+			ostr << *mls.locks[i] << "\n\n";
 		}
-
-		ostr << "\nCN:   ";
-		for (int i = 0; i < mls.locks[i].GetSize(); i++)
-		{
-			ostr << mls.locks[i].GetCN(i) << " ";
-		}
-
-		ostr << "\nLN:   ";
-		for (int i = 0; i < mls.locks[i].GetSize(); i++)
-		{
-			ostr << mls.locks[i].GetLN(i) << " ";
-		}
-
-		ostr << "\nHN:   ";
-		for (int i = 0; i < mls.locks[i].GetSize(); i++)
-		{
-			ostr << mls.locks[i].GetHN(i) << " ";
-		}
-
-		ostr << "\nValid? " << mls.locks[i].IsValid();
 	}
 	return ostr;
 }

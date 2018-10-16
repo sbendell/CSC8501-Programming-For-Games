@@ -1,8 +1,6 @@
 #pragma once
 #include "CombinationLock.h"
-#include <iostream>
 
-using namespace std;
 
 class MultiLockSafe
 {
@@ -12,9 +10,10 @@ public:
 	void UnlockHash(CombinationLock* lock, int* hash);
 	void LockHash(CombinationLock* lock, int* hash);
 	void PassHash(CombinationLock* lock, int* hash);
+	int GetSize() const { return size; }
 	friend ostream& operator<<(ostream& ostr, const MultiLockSafe& mls);
 private:
-	CombinationLock* locks;
+	CombinationLock** locks;
 	int size;
 	int* UHF;
 	int* LHF;

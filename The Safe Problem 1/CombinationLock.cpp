@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CombinationLock.h"
 
+
 CombinationLock::CombinationLock(int Size, int* Root)
 {
 	size = Size;
@@ -16,6 +17,37 @@ CombinationLock::CombinationLock()
 
 CombinationLock::~CombinationLock()
 {
+}
+
+ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
+	ostr << "\nRoot: ";
+
+	for (int i = 0; i < cl.GetSize(); i++)
+	{
+		ostr << cl.GetROOT(i) << " ";
+	}
+
+	ostr << "\nCN:   ";
+	for (int i = 0; i < cl.GetSize(); i++)
+	{
+		ostr << cl.GetCN(i) << " ";
+	}
+
+	ostr << "\nLN:   ";
+	for (int i = 0; i < cl.GetSize(); i++)
+	{
+		ostr << cl.GetLN(i) << " ";
+	}
+
+	ostr << "\nHN:   ";
+	for (int i = 0; i < cl.GetSize(); i++)
+	{
+		ostr << cl.GetHN(i) << " ";
+	}
+
+	//ostr << "\nValid? " << cl.IsValid();
+
+	return ostr;
 }
 
 void CombinationLock::SetROOT(const int value, const int position) {

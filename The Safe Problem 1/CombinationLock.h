@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
 
 class CombinationLock
 {
@@ -16,6 +19,7 @@ public:
 	void SetLN(const int value, const int position);
 	void SetHN(const int value, const int position);
 	bool IsValid();
+	friend ostream& operator<<(ostream& ostr, const CombinationLock& cl);
 private:
 	int size;
 	int ROOT[4];

@@ -9,10 +9,11 @@ public:
 	CombinationLock(int size, int* Root);
 	CombinationLock();
 	~CombinationLock();
-	int* GetROOT() const { return (int*)ROOT; }
-	int* GetCN() const { return (int*)CN; }
-	int* GetLN() const { return (int*)LN; }
-	int* GetHN() const { return (int*)HN; }
+	int GetROOT(const int position) const { return ROOT[position]; }
+	int GetCN(const int position) const { return CN[position]; }
+	int GetLN(const int position) const { return LN[position]; }
+	int GetHN(const int position) const { return HN[position]; }
+
 	int GetSize() const { return size; }
 	void SetROOT(const int value, const int position);
 	void SetCN(const int value, const int position);
@@ -27,4 +28,5 @@ private:
 	int CN[4];
 	int LN[4];
 	int HN[4];
+
 };

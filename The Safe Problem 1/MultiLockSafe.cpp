@@ -19,7 +19,7 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 		PassHash(locks[i], PHF);
 		for (int x = 0; x < lockSize; x++)
 		{
-			nextRoot[x] = locks[i]->GetHN(x);
+			nextRoot[x] = locks[i]->GetHN()[x];
 		}
 	}
 }
@@ -31,6 +31,7 @@ MultiLockSafe::~MultiLockSafe()
 	{
 		delete locks[i];
 	}
+	delete[] locks;
 }
 
 ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
@@ -56,26 +57,39 @@ ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
 	{
 		ostr << *mls.locks[i] << "\n\n";
 	}
+
+	ostr << "Multisafe Valid? " << mls.IsValid() << "\n\n";
 	return ostr;
 }
 
 void MultiLockSafe::UnlockHash(CombinationLock* lock, int* hash) {
 	for (int i = 0; i < lock->GetSize(); i++)
 	{
-		lock->SetCN(lock->GetROOT(i) + hash[i], i);
+		lock->SetCN(lock->GetROOT()[i] + hash[i], i);
 	}
 }
 
 void MultiLockSafe::LockHash(CombinationLock* lock, int* hash) {
 	for (int i = 0; i < lock->GetSize(); i++)
 	{
-		lock->SetLN(lock->GetCN(i) + hash[i], i);
+		lock->SetLN(lock->GetCN()[i] + hash[i], i);
 	}
 }
 
 void MultiLockSafe::PassHash(CombinationLock* lock, int* hash) {
 	for (int i = 0; i < lock->GetSize(); i++)
 	{
-		lock->SetHN(lock->GetLN(i) + hash[i], i);
+		lock->SetHN(lock->GetLN()[i] + hash[i], i);
 	}
+}
+
+bool MultiLockSafe::IsValid() const {
+	bool valid = true;
+	for (int i = 0; i < size; i++)
+	{
+		if (locks[i]->IsValid() == false) {
+			valid = false;
+		}
+	}
+	return valid;
 }

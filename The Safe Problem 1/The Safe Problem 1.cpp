@@ -26,9 +26,24 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	MultiLockSafe firstSafe(5, 4, root, UHF, LHF, PHF);
+	int UHFArray[4] = { +1, -1, +1, -1 };
 
-	cout << firstSafe;
+
+	int validLocks = 0;
+
+	for (int i = 0; i < 10000; i++)
+	{
+		delete[] root;
+		root = RandomArray(4, 9 * i, 0);
+		MultiLockSafe newSafe(5, 4, root, UHF, LHF, PHF);
+		//cout << newSafe;
+		//cout << "\nValid Multisafes: " << validLocks << "\n\n";
+		if (newSafe.IsValid()) {
+			validLocks++;
+		}
+	}
+
+	cout << "\n\n\n\nValid Multisafes: " << validLocks;
 
 	int x;
 	cin >> x;

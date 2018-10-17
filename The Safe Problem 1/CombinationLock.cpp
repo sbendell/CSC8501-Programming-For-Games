@@ -7,7 +7,7 @@ CombinationLock::CombinationLock(int Size, int* Root)
 	size = Size;
 	for (int i = 0; i < size; i++)
 	{
-		ROOT[i] = Root[i];
+		SetROOT(Root[i],i);
 	}
 }
 
@@ -24,25 +24,25 @@ ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
 
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetROOT(i) << " ";
+		ostr << cl.GetROOT()[i] << " ";
 	}
 
 	ostr << "\nCN:   ";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetCN(i) << " ";
+		ostr << cl.GetCN()[i] << " ";
 	}
 
 	ostr << "\nLN:   ";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetLN(i) << " ";
+		ostr << cl.GetLN()[i] << " ";
 	}
 
 	ostr << "\nHN:   ";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetHN(i) << " ";
+		ostr << cl.GetHN()[i] << " ";
 	}
 
 	ostr << "\nValid? " << cl.IsValid();

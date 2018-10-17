@@ -12,6 +12,7 @@ public:
 	void PassHash(CombinationLock* lock, int* hash);
 	int GetSize() const { return size; }
 	friend ostream& operator<<(ostream& ostr, const MultiLockSafe& mls);
+	bool IsValid() const;
 private:
 	CombinationLock** locks;
 	int size;

@@ -19,6 +19,7 @@ public:
 	void SetLN(const int value, const int position);
 	void SetHN(const int value, const int position);
 	bool IsValid() const;
+	int GetSum();
 	friend ostream& operator<<(ostream& ostr, const CombinationLock& cl);
 private:
 	int size;

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MultiLockSafe.h"
+#include <cmath>
 
 MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* Lhf, int* Phf)
 {
@@ -92,4 +93,33 @@ bool MultiLockSafe::IsValid() const {
 		}
 	}
 	return valid;
+}
+
+bool MultiLockSafe::IsValidBonus() const {
+	for (int i = 0; i < size; i++)
+	{
+		if (locks[i]->IsValid() == false) {
+			return false;
+		}
+	}
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (locks[i]->GetSum() >= locks[i+1]->GetSum()) {
+			return false;
+		}
+	}
+
+	int totalSum = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		totalSum += locks[i]->GetSum();
+	}
+
+	if (totalSum % 2 == 1) {
+		return false;
+	}
+
+	return true;
 }

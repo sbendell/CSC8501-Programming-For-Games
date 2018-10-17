@@ -95,17 +95,27 @@ void CombinationLock::SetHN(const int value, const int position) {
 }
 
 bool CombinationLock::IsValid() const {
-	bool valid = true;
 	for (int i = 0; i < size; i++)
 	{
 		for (int k = 0; k < size; k++)
 		{
 			if (i != k) {
 				if (CN[i] == CN[k]) {
-					valid = false;
+					return  false;
 				}
 			}
 		}
 	}
-	return valid;
+	return true;
+}
+
+int CombinationLock::GetSum() {
+	int sum = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		sum += CN[i];
+	}
+
+	return sum;
 }

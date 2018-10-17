@@ -13,7 +13,7 @@ int* RandomArray(int size, int upperbound, int lowerbound) {
 	int* newArray = new int[size];
 	for (int i = 0; i < size; i++)
 	{
-		newArray[i] = rand() % (upperbound + 1 - lowerbound) + lowerbound;
+		newArray[i] = rand() % (upperbound + 1) + lowerbound;
 	}
 	return newArray;
 }
@@ -30,6 +30,7 @@ int main()
 
 
 	int validLocks = 0;
+	int validLocksBonus = 0;
 
 	for (int i = 0; i < 10000; i++)
 	{
@@ -41,9 +42,13 @@ int main()
 		if (newSafe.IsValid()) {
 			validLocks++;
 		}
+		if (newSafe.IsValidBonus()) {
+			validLocksBonus++;
+		}
 	}
 
 	cout << "\n\n\n\nValid Multisafes: " << validLocks;
+	cout << "\n\nValid Multisafes Bonus: " << validLocksBonus;
 
 	int x;
 	cin >> x;

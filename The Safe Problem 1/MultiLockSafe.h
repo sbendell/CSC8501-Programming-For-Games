@@ -13,6 +13,7 @@ public:
 	int GetSize() const { return size; }
 	friend ostream& operator<<(ostream& ostr, const MultiLockSafe& mls);
 	bool IsValid() const;
+	bool IsValidBonus() const;
 private:
 	CombinationLock** locks;
 	int size;

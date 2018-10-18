@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "MultiLockSafe.h"
-#include <cmath>
 
 MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* Lhf, int* Phf)
 {
@@ -15,9 +14,12 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 	for (int i = 0; i < size; i++)
 	{
 		locks[i] = new CombinationLock(lockSize, nextRoot);
-		UnlockHash(locks[i], UHF);
-		LockHash(locks[i], LHF);
-		PassHash(locks[i], PHF);
+		//UnlockHash(locks[i], UHF);
+		//LockHash(locks[i], LHF);
+		//PassHash(locks[i], PHF);
+		Hash(i, UHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetCN(lock->GetROOT(iterator) + hash[iterator], iterator); });
+		Hash(i, LHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetLN(lock->GetCN(iterator) + hash[iterator], iterator); });
+		Hash(i, PHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetHN(lock->GetLN(iterator) + hash[iterator], iterator); });
 		for (int x = 0; x < lockSize; x++)
 		{
 			nextRoot[x] = locks[i]->GetHN(x);
@@ -63,6 +65,15 @@ ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
 	return ostr;
 }
 
+template <typename T>
+void MultiLockSafe::Hash(int whichlock, int* hash, T &lambda) {
+	for (int i = 0; i < locks[0]->GetSize(); i++)
+	{
+		lambda(i, locks[whichlock], hash);
+	}
+}
+
+/*
 void MultiLockSafe::UnlockHash(CombinationLock* lock, int* hash) {
 	for (int i = 0; i < lock->GetSize(); i++)
 	{
@@ -82,7 +93,7 @@ void MultiLockSafe::PassHash(CombinationLock* lock, int* hash) {
 	{
 		lock->SetHN(lock->GetLN(i) + hash[i], i);
 	}
-}
+}*/
 
 bool MultiLockSafe::IsValid() const {
 	bool valid = true;

@@ -1,7 +1,6 @@
 #pragma once
 #include "CombinationLock.h"
 
-
 class MultiLockSafe
 {
 public:
@@ -10,6 +9,8 @@ public:
 	void UnlockHash(CombinationLock* lock, int* hash);
 	void LockHash(CombinationLock* lock, int* hash);
 	void PassHash(CombinationLock* lock, int* hash);
+	template<typename T>
+	void Hash(int whichlock, int* hash,  T &lambda);
 	int GetSize() const { return size; }
 	friend ostream& operator<<(ostream& ostr, const MultiLockSafe& mls);
 	bool IsValid() const;

@@ -65,6 +65,10 @@ ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
 	return ostr;
 }
 
+istream& operator<<(istream& ostr, const MultiLockSafe& mls) {
+	return ostr;
+}
+
 template <typename T>
 void MultiLockSafe::Hash(int whichlock, int* hash, T &lambda) {
 	for (int i = 0; i < locks[0]->GetSize(); i++)

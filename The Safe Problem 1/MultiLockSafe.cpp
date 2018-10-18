@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "MultiLockSafe.h"
-#include <cmath>
 
 MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* Lhf, int* Phf)
 {
@@ -18,9 +17,9 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 		//UnlockHash(locks[i], UHF);
 		//LockHash(locks[i], LHF);
 		//PassHash(locks[i], PHF);
-		Hash(i, UHF, [=](int iterator, CombinationLock* lock, int* hash) { lock->SetCN(lock->GetROOT(iterator) + hash[iterator], iterator); });
-		Hash(i, LHF, [=](int iterator, CombinationLock* lock, int* hash) { lock->SetLN(lock->GetCN(iterator) + hash[iterator], iterator); });
-		Hash(i, PHF, [=](int iterator, CombinationLock* lock, int* hash) { lock->SetHN(lock->GetLN(iterator) + hash[iterator], iterator); });
+		Hash(i, UHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetCN(lock->GetROOT(iterator) + hash[iterator], iterator); });
+		Hash(i, LHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetLN(lock->GetCN(iterator) + hash[iterator], iterator); });
+		Hash(i, PHF, [](int iterator, CombinationLock* lock, int* hash) { lock->SetHN(lock->GetLN(iterator) + hash[iterator], iterator); });
 		for (int x = 0; x < lockSize; x++)
 		{
 			nextRoot[x] = locks[i]->GetHN(x);

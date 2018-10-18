@@ -21,6 +21,7 @@ int* RandomArray(int size, int upperbound, int lowerbound) {
 int main()
 {
 	srand(time(NULL));
+	clock_t start = clock();
 	int* root = RandomArray(4, 9, 0);
 	int* UHF = RandomArray(4, 9, -9);
 	int* LHF = RandomArray(4, 9, -9);
@@ -37,8 +38,8 @@ int main()
 		delete[] root;
 		root = RandomArray(4, 9 * i, 0);
 		MultiLockSafe newSafe(5, 4, root, UHF, LHF, PHF);
-		cout << newSafe;
-		cout << "\nValid Multisafes: " << validLocks << "\n\n";
+		//cout << newSafe;
+		//cout << "\nValid Multisafes: " << validLocks << "\n\n";
 		if (newSafe.IsValid()) {
 			validLocks++;
 		}
@@ -49,6 +50,8 @@ int main()
 
 	cout << "\n\n\n\nValid Multisafes: " << validLocks;
 	cout << "\n\nValid Multisafes Bonus: " << validLocksBonus;
+	clock_t end = clock();
+	cout << "\nTime taken" << double(end - start) / CLOCKS_PER_SEC;
 
 	int x;
 	cin >> x;

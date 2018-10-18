@@ -32,13 +32,13 @@ int main()
 	int validLocks = 0;
 	int validLocksBonus = 0;
 
-	for (int i = 0; i < 10000; i++)
+	for (int i = 1; i < 10000; i++)
 	{
 		delete[] root;
 		root = RandomArray(4, 9 * i, 0);
 		MultiLockSafe newSafe(5, 4, root, UHF, LHF, PHF);
-		//cout << newSafe;
-		//cout << "\nValid Multisafes: " << validLocks << "\n\n";
+		cout << newSafe;
+		cout << "\nValid Multisafes: " << validLocks << "\n\n";
 		if (newSafe.IsValid()) {
 			validLocks++;
 		}

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <time.h>
 #include <random>
+#include <istream>
 
 using namespace std;
 
@@ -27,17 +28,18 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	int UHFArray[4] = { +1, -1, +1, -1 };
-
+	int iterations = 10000;
+	int safeSize = 5;
+	int lockSize = 4;
 
 	int validLocks = 0;
 	int validLocksBonus = 0;
 
-	for (int i = 1; i < 10000; i++)
+	for (int i = 1; i < iterations; i++)
 	{
 		delete[] root;
-		root = RandomArray(4, 9 * i, 0);
-		MultiLockSafe newSafe(5, 4, root, UHF, LHF, PHF);
+		root = RandomArray(lockSize, 9 * i, 0);
+		MultiLockSafe newSafe(safeSize, lockSize, root, UHF, LHF, PHF);
 		//cout << newSafe;
 		//cout << "\nValid Multisafes: " << validLocks << "\n\n";
 		if (newSafe.IsValid()) {

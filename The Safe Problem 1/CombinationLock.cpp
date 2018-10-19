@@ -20,33 +20,23 @@ CombinationLock::~CombinationLock()
 }
 
 ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
-	ostr << "\nRoot: ";
-
+	ostr << "CN ";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetROOT(i) << " ";
+		ostr << cl.GetCN(i);
 	}
 
-	ostr << "\nCN:   ";
+	ostr << ", LN";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetCN(i) << " ";
+		ostr << cl.GetLN(i);
 	}
 
-	ostr << "\nLN:   ";
+	ostr << ", HN";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
-		ostr << cl.GetLN(i) << " ";
+		ostr << cl.GetHN(i);
 	}
-
-	ostr << "\nHN:   ";
-	for (int i = 0; i < cl.GetSize(); i++)
-	{
-		ostr << cl.GetHN(i) << " ";
-	}
-
-	ostr << "\nValid? " << cl.IsValid();
-
 	return ostr;
 }
 

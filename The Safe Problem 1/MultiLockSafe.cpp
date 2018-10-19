@@ -27,6 +27,9 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 	}
 }
 
+MultiLockSafe::MultiLockSafe() {
+
+}
 
 MultiLockSafe::~MultiLockSafe()
 {
@@ -38,30 +41,18 @@ MultiLockSafe::~MultiLockSafe()
 }
 
 ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
-	ostr << "UHF: ";
-	for (int i = 0; i < 4; i++)
-	{
-		ostr << mls.UHF[i] << " ";
+	if (mls.IsValid()) {
+		ostr << "VALID" << endl;
 	}
-
-	ostr << "\nLHF: ";
-	for (int i = 0; i < 4; i++)
-	{
-		ostr << mls.LHF[i] << " ";
-	}
-
-	ostr << "\nPHF: ";
-	for (int i = 0; i < 4; i++)
-	{
-		ostr << mls.PHF[i] << " ";
+	else {
+		ostr << "NOT VALID" << endl;
 	}
 
 	for (int i = 0; i < mls.size; i++)
 	{
-		ostr << *mls.locks[i] << "\n\n";
+		ostr << *mls.locks[i] << "\n";
 	}
-
-	ostr << "Multisafe Valid? " << mls.IsValid() << "\n\n";
+	ostr << "\n";
 	return ostr;
 }
 

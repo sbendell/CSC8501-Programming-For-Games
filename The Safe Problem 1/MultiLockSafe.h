@@ -5,6 +5,7 @@ class MultiLockSafe
 {
 public:
 	MultiLockSafe(int Size, int lockSize, int* root, int* UHF, int*LHF, int* PHF);
+	MultiLockSafe();
 	~MultiLockSafe();
 	//void UnlockHash(CombinationLock* lock, int* hash);
 	//void LockHash(CombinationLock* lock, int* hash);

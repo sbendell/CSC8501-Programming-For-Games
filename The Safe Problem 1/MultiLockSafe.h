@@ -13,6 +13,7 @@ public:
 	void Hash(int whichlock, int* hash,  T &lambda);
 	int GetSize() const { return size; }
 	friend ostream& operator<<(ostream& ostr, const MultiLockSafe& mls);
+	friend istream& operator<<(istream& ostr, const MultiLockSafe& mls);
 	bool IsValid() const;
 	bool IsValidBonus() const;
 private:

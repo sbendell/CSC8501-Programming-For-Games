@@ -44,6 +44,30 @@ void OutputHash(int* hash, int size, ofstream& stream) {
 	stream << endl;
 }
 
+void OutputToKeyFile(vector<int>& roots, int lockSize, int* UHF, int* LHF, int* PHF, string filename, ofstream& stream) {
+	stream.open(filename.c_str());
+
+	stream << "NS " << roots.size() << endl;
+	for (int i = 0; i < roots.size(); i++)
+	{
+		if (roots[i] < 1000) {
+			stream << "0" << roots[i] << endl;
+		}
+		else {
+			stream << roots[i] << endl;
+		}
+		OutputHash(UHF, lockSize, stream);
+		OutputHash(LHF, lockSize, stream);
+		OutputHash(PHF, lockSize, stream);
+	}
+	stream.close();
+}
+
+void ReadFromKeyFile(string filename, ifstream& stream, char& buffer) {
+	stream.open(filename.c_str());
+	
+}
+
 int main()
 {
 	srand(time(NULL));
@@ -53,7 +77,7 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	int iterations = 1000000;
+	int iterations = 10000;
 	int safeSize = 5;
 	int lockSize = 4;
 
@@ -64,47 +88,26 @@ int main()
 	string filename = "key.txt";
 	ofstream datafile;
 
-	try {
-		for (int i = 1; i < iterations; i++)
-		{
-			MultiLockSafe newSafe(safeSize, lockSize, root, UHF, LHF, PHF);
-			//cout << newSafe;
-			//cout << "\nValid Multisafes: " << validLocks << "\n\n";
-			if (newSafe.IsValid()) {
-				validLocks++;
-				roots.push_back(ArrayToInt(lockSize, root));
-			}
-			if (newSafe.IsValidBonus()) {
-				validLocksBonus++;
-			}
-
-			delete[] root;
-			root = RandomArray(lockSize, 9 * i, 0);
+	for (int i = 0; i < iterations; i++)
+	{
+		MultiLockSafe newSafe(safeSize, lockSize, root, UHF, LHF, PHF);
+		if (newSafe.IsValid()) {
+			validLocks++;
+			roots.push_back(ArrayToInt(lockSize, root));
+		}
+		if (newSafe.IsValidBonus()) {
+			validLocksBonus++;
 		}
 
-		datafile.open(filename.c_str());
-
-		if (datafile.fail())
-			throw invalid_argument("no file exists " + filename);
-
-		datafile << "NS " << validLocks << endl;
-		for (int i = 0; i < roots.size(); i++)
-		{
-			datafile << roots[i] << endl;
-			OutputHash(UHF, lockSize, datafile);
-			OutputHash(LHF, lockSize, datafile);
-			OutputHash(PHF, lockSize, datafile);
-		}
+		delete[] root;
+		root = RandomArray(lockSize, 9, 0);
 	}
-	catch(invalid_argument& iae) {
-		cout << iae.what();
-	}
+	OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, filename, datafile);
 
 	cout << "\n\n\n\nValid Multisafes: " << validLocks;
 	cout << "\n\nValid Multisafes Bonus: " << validLocksBonus;
 	clock_t end = clock();
 	cout << "\nTime taken" << double(end - start) / CLOCKS_PER_SEC;
-	datafile.close();
 	int x;
 	cin >> x;
 
@@ -113,6 +116,6 @@ int main()
 	delete[] LHF;
 	delete[] PHF;
 
-    return 0;
+	return 0;
 }
 

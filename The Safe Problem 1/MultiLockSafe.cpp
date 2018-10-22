@@ -42,10 +42,10 @@ MultiLockSafe::~MultiLockSafe()
 
 ostream& operator<<(ostream& ostr, const MultiLockSafe& mls) {
 	if (mls.IsValid()) {
-		ostr << "VALID" << endl;
+		ostr << "VALID" << "\n";
 	}
 	else {
-		ostr << "NOT VALID" << endl;
+		ostr << "NOT VALID" << "\n";
 	}
 
 	for (int i = 0; i < mls.size; i++)

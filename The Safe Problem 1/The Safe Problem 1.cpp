@@ -68,7 +68,7 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	int iterations = 10000000;
+	int iterations = 1000000;
 	int safeSize = 5;
 	int lockSize = 4;
 

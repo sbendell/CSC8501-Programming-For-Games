@@ -35,11 +35,16 @@ int ArrayToInt(int size, int* arr) {
 	return value;
 }
 
-void ValidateSafes(int iterations, int safeSize, int lockSize, int*& root, int*& UHF, int*& LHF,
+void ValidateSafes(int iterations, int safeSize, int lockSize, int*& root, int*& tempRoot, int*& UHF, int*& LHF,
 	int*& PHF, vector<int>& roots, int& validLocks, int& validLocksBonus) {
 	for (int i = 0; i < iterations; i++)
 	{
-		MultiLockSafe newSafe(safeSize, lockSize, root, UHF, LHF, PHF);
+		for (int x = 0; x < lockSize; x++)
+		{
+			tempRoot[x] = root[x];
+		}
+
+		MultiLockSafe newSafe(safeSize, lockSize, tempRoot, UHF, LHF, PHF);
 		if (newSafe.IsValid()) {
 			roots.push_back(ArrayToInt(lockSize, root));
 			validLocks++;
@@ -58,11 +63,12 @@ int main()
 	srand(time(NULL));
 	clock_t start = clock();
 	int* root = RandomArray(4, 9, 0);
+	int* tempRoot = new int[4];
 	int* UHF = RandomArray(4, 9, -9);
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	int iterations = 1000000;
+	int iterations = 10000000;
 	int safeSize = 5;
 	int lockSize = 4;
 
@@ -74,7 +80,7 @@ int main()
 	string safefile = "multi-safe.txt";
 	ofstream odatafile;
 	ifstream idatafile;
-	ValidateSafes(iterations, safeSize, lockSize, root, UHF, LHF, PHF, roots, validLocks, validLocksBonus);
+	ValidateSafes(iterations, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocks, validLocksBonus);
 	OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile, odatafile);
 	ReadFromKeyFile(root, UHF, LHF, PHF, keyfile, safefile, idatafile, odatafile);
 
@@ -86,6 +92,7 @@ int main()
 	cin >> x;
 
 	delete[] root;
+	delete[] tempRoot;
 	delete[] UHF;
 	delete[] LHF;
 	delete[] PHF;

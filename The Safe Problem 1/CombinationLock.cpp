@@ -23,7 +23,7 @@ CombinationLock::~CombinationLock()
 ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
 	ostr << "CN" << cl.GetID() << " " << cl.GetCN(0) << cl.GetCN(1) << cl.GetCN(2) << cl.GetCN(3) << ", "
 		<< "LN" << cl.GetID() << " " << cl.GetLN(0) << cl.GetLN(1) << cl.GetLN(2) << cl.GetLN(3) << ", "
-		<< "HN" << cl.GetID() << " " << cl.GetHN(0) << cl.GetHN(1) << cl.GetHN(2) << cl.GetHN(3) << "  " << cl.IsValid();
+		<< "HN" << cl.GetID() << " " << cl.GetHN(0) << cl.GetHN(1) << cl.GetHN(2) << cl.GetHN(3);
 	return ostr;
 }
 

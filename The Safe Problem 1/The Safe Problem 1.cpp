@@ -15,6 +15,9 @@ using namespace std;
 
 int* RandomArray(int size, int upperbound, int lowerbound) {
 	int* newArray = new int[size];
+	if (lowerbound < 0) {
+		upperbound = upperbound + abs(lowerbound);
+	}
 	for (int i = 0; i < size; i++)
 	{
 		newArray[i] = rand() % (upperbound + 1) + lowerbound;
@@ -34,11 +37,11 @@ int ArrayToInt(int size, int* arr) {
 
 void ValidateSafes(int iterations, int safeSize, int lockSize, int*& root, int*& UHF, int*& LHF,
 	int*& PHF, vector<int>& roots, int& validLocks, int& validLocksBonus) {
-	while (validLocks < 10000)
+	for (int i = 0; i < iterations; i++)
 	{
 		MultiLockSafe newSafe(safeSize, lockSize, root, UHF, LHF, PHF);
-		roots.push_back(ArrayToInt(lockSize, root));
 		if (newSafe.IsValid()) {
+			roots.push_back(ArrayToInt(lockSize, root));
 			validLocks++;
 		}
 		if (newSafe.IsValidBonus()) {

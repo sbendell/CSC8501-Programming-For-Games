@@ -9,11 +9,15 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 	LHF = Lhf;
 	PHF = Phf;
 
-	int * nextRoot = root;
+	int * nextRoot = new int[4];
+	for (int x = 0; x < lockSize; x++)
+	{
+		nextRoot[x] = root[x];
+	}
 
 	for (int i = 0; i < size; i++)
 	{
-		locks[i] = new CombinationLock(lockSize, nextRoot);
+		locks[i] = new CombinationLock(lockSize, nextRoot, i);
 		//UnlockHash(locks[i], UHF);
 		//LockHash(locks[i], LHF);
 		//PassHash(locks[i], PHF);
@@ -91,14 +95,13 @@ void MultiLockSafe::PassHash(CombinationLock* lock, int* hash) {
 }*/
 
 bool MultiLockSafe::IsValid() const {
-	bool valid = true;
 	for (int i = 0; i < size; i++)
 	{
 		if (locks[i]->IsValid() == false) {
-			valid = false;
+			return false;
 		}
 	}
-	return valid;
+	return true;
 }
 
 bool MultiLockSafe::IsValidBonus() const {

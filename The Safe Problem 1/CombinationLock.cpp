@@ -2,9 +2,10 @@
 #include "CombinationLock.h"
 
 
-CombinationLock::CombinationLock(int Size, int* Root)
+CombinationLock::CombinationLock(int Size, int* Root, int ID)
 {
 	size = Size;
+	id = ID;
 	for (int i = 0; i < size; i++)
 	{
 		SetROOT(Root[i],i);
@@ -20,6 +21,13 @@ CombinationLock::~CombinationLock()
 }
 
 ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
+	ostr << "CN" << cl.GetID() << " " << cl.GetCN(0) << cl.GetCN(1) << cl.GetCN(2) << cl.GetCN(3) << ", "
+		<< "LN" << cl.GetID() << " " << cl.GetLN(0) << cl.GetLN(1) << cl.GetLN(2) << cl.GetLN(3) << ", "
+		<< "HN" << cl.GetID() << " " << cl.GetHN(0) << cl.GetHN(1) << cl.GetHN(2) << cl.GetHN(3) << "  " << cl.IsValid();
+	return ostr;
+}
+
+/*ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
 	ostr << "CN ";
 	for (int i = 0; i < cl.GetSize(); i++)
 	{
@@ -38,7 +46,7 @@ ostream& operator<<(ostream& ostr, const CombinationLock& cl) {
 		ostr << cl.GetHN(i);
 	}
 	return ostr;
-}
+}*/
 
 void CombinationLock::SetROOT(const int value, const int position) {
 	int newVal = value;

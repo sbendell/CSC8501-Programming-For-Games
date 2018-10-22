@@ -32,12 +32,18 @@ void OutputToKeyFile(vector<int>& roots, int lockSize, int* UHF, int* LHF, int* 
 		if (roots[i] < 1000) {
 			stream << "0" << roots[i] << "\n";
 		}
+		else if (roots[i] < 100) {
+			stream << "00" << roots[i] << "\n";
+		}
+		else if (roots[i] < 10) {
+			stream << "000" << roots[i] << "\n";
+		}
 		else {
 			stream << roots[i] << "\n";
 		}
 		OutputHash(UHF, "UHF ", lockSize, stream);
 		OutputHash(LHF, "LHF ", lockSize, stream);
-		OutputHash(PHF, "PHF", lockSize, stream);
+		OutputHash(PHF, "PHF ", lockSize, stream);
 	}
 	stream.close();
 }

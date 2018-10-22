@@ -6,13 +6,14 @@ using namespace std;
 class CombinationLock
 {
 public:
-	CombinationLock(int size, int* Root);
+	CombinationLock(int size, int* Root, int id);
 	CombinationLock();
 	~CombinationLock();
 	int GetROOT(const int position) const { return ROOT[position]; }
 	int GetCN(const int position) const { return CN[position]; }
 	int GetLN(const int position) const { return LN[position]; }
 	int GetHN(const int position) const { return HN[position]; }
+	int GetID() const { return id; }
 
 	int GetSize() const { return size; }
 	void SetROOT(const int value, const int position);
@@ -28,5 +29,5 @@ private:
 	int CN[4];
 	int LN[4];
 	int HN[4];
-
+	int id;
 };

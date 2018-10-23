@@ -1,5 +1,11 @@
 #pragma once
 #include "CombinationLock.h"
+#include <iostream>
+#include <time.h>
+#include <random>
+#include <fstream>
+#include <string>
+#include <cmath>
 
 class MultiLockSafe
 {
@@ -17,7 +23,7 @@ public:
 	bool IsValid() const;
 	bool IsValidBonus();
 private:
-	CombinationLock locks[5];
+	vector<CombinationLock> locks;
 	int size;
 	int* UHF;
 	int* LHF;

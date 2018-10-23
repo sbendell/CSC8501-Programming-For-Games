@@ -72,10 +72,9 @@ void ParseHashes(int* hash, ifstream& stream) {
 	}
 }
 
-void ReadSafeFromKeyFile(int* root, int* UHF, int* LHF, int* PHF, ifstream& istream, ofstream& ostream, int iteration) {
+void ReadSafeFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF, ifstream& istream, ofstream& ostream, int iteration) {
 	string str;
 	char c;
-	int tempRoot;
 	for (int i = 0; i < 4; i++)
 	{
 		istream >> c;
@@ -84,19 +83,19 @@ void ReadSafeFromKeyFile(int* root, int* UHF, int* LHF, int* PHF, ifstream& istr
 	ParseHashes(UHF, istream);
 	ParseHashes(LHF, istream);
 	ParseHashes(PHF, istream);
-	MultiLockSafe readMultiSafe(5, 4, root, UHF, LHF, PHF);
+	MultiLockSafe readMultiSafe(safeSize, lockSize, root, UHF, LHF, PHF);
 	ostream << "NS" << iteration << " ";
 	ostream << readMultiSafe;
 }
 
-void ReadFromKeyFile(int* root, int* UHF, int* LHF, int* PHF, string keyfile, string safefile, ifstream& idatafile, ofstream& odatafile) {
+void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF, string keyfile, string safefile, ifstream& idatafile, ofstream& odatafile) {
 	idatafile.open(keyfile.c_str());
 	odatafile.open(safefile.c_str());
 	int keyFileSize = ReadKeyFileSize(idatafile);
 
 	for (int i = 0; i < keyFileSize; i++)
 	{
-		ReadSafeFromKeyFile(root, UHF, LHF, PHF, idatafile, odatafile, i);
+		ReadSafeFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, idatafile, odatafile, i);
 	}
 	idatafile.close();
 	odatafile.close();

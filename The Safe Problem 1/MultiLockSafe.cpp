@@ -10,7 +10,8 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 
 	for (int i = 0; i < size; i++)
 	{
-		locks[i] = CombinationLock(lockSize, root, i);
+		CombinationLock newlock = CombinationLock(lockSize, root, i);
+		locks.push_back(newlock);
 		//UnlockHash(locks[i], UHF);
 		//LockHash(locks[i], LHF);
 		//PassHash(locks[i], PHF);

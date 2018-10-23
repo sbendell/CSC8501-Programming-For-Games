@@ -35,9 +35,10 @@ int ArrayToInt(int size, int* arr) {
 	return value;
 }
 
-void ValidateSafes(int iterations, int safeSize, int lockSize, int*& root, int*& tempRoot, int*& UHF, int*& LHF,
-	int*& PHF, vector<int>& roots, int& validLocks, int& validLocksBonus) {
-	for (int i = 0; i < iterations; i++)
+void ValidateSafes(int iterationCap, int validLocks, int safeSize, int lockSize, int*& root, int*& tempRoot, int*& UHF, int*& LHF,
+	int*& PHF, vector<int>& roots, int& validLocksBonus) {
+	int iterations = 0;
+	while(roots.size() < validLocks && iterations < iterationCap)
 	{
 		for (int x = 0; x < lockSize; x++)
 		{
@@ -55,6 +56,7 @@ void ValidateSafes(int iterations, int safeSize, int lockSize, int*& root, int*&
 
 		delete[] root;
 		root = RandomArray(lockSize, 9, 0);
+		iterations++;
 	}
 }
 
@@ -68,24 +70,29 @@ int main()
 	int* LHF = RandomArray(4, 9, -9);
 	int* PHF = RandomArray(4, 9, -9);
 
-	int iterations = 1000000;
+	int iterationCap = 100000;
 	int safeSize = 5;
 	int lockSize = 4;
+	int validLocks = 100;
+	int validLocksBonus = 0;
 
 	vector<int> roots;
-	roots.reserve(iterations);
-	int validLocks = 0;
-	int validLocksBonus = 0;
+	roots.reserve(validLocks);
 	string keyfile = "key.txt";
 	string safefile = "multi-safe.txt";
 	ofstream odatafile;
 	ifstream idatafile;
-	ValidateSafes(iterations, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocks, validLocksBonus);
-	OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile, odatafile);
-	ReadFromKeyFile(root, UHF, LHF, PHF, keyfile, safefile, idatafile, odatafile);
+	ValidateSafes(iterationCap, validLocks, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocksBonus);
+	if (roots.size() >= validLocks) {
+		OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile, odatafile);
+		ReadFromKeyFile(root, UHF, LHF, PHF, keyfile, safefile, idatafile, odatafile);
+		cout << "Valid Multisafes: " << validLocks;
+		cout << "\nValid Multisafes Bonus: " << validLocksBonus;
+	}
+	else {
+		cout << "Did not find " << validLocks << " valid locks in " << iterationCap << " iterations.";
+	}
 
-	cout << "Valid Multisafes: " << validLocks;
-	cout << "\nValid Multisafes Bonus: " << validLocksBonus;
 	clock_t end = clock();
 	cout << "\nTime taken" << double(end - start) / CLOCKS_PER_SEC;
 	int x;

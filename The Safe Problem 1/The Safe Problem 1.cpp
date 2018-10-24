@@ -82,9 +82,8 @@ int main()
 	roots.reserve(validLocks);
 	string keyfile = "key.txt";
 	string safefile = "multi-safe.txt";
-	ofstream odatafile;
-	ifstream idatafile;
-	
+	string lockedfile = "locked-safe.txt";
+
 	while (runAgain) {
 		cout << "How many solutions should I find?\n";
 		cin >> validLocks;
@@ -94,8 +93,8 @@ int main()
 		GenerateNewHashes(UHF, LHF, PHF, lockSize);
 		ValidateSafes(iterationCap, validLocks, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocksBonus);
 		if (roots.size() > 0) {
-			OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile, odatafile);
-			ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, idatafile, odatafile);
+			OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile);
+			ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, lockedfile, roots.size());
 			cout << "Valid Multisafes: " << validLocks;
 			cout << "\nValid Multisafes Bonus: " << validLocksBonus;
 		}

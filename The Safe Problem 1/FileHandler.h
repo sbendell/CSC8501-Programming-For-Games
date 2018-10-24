@@ -23,7 +23,8 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 	stream << "\n";
 }
 
-void OutputToKeyFile(vector<int>& roots, int lockSize, int* UHF, int* LHF, int* PHF, string filename, ofstream& stream) {
+void OutputToKeyFile(vector<int>& roots, int lockSize, int* UHF, int* LHF, int* PHF, string filename) {
+	ofstream stream;
 	stream.open(filename.c_str());
 
 	stream << "NS " << roots.size() << "\n";
@@ -72,31 +73,42 @@ void ParseHashes(int* hash, ifstream& stream) {
 	}
 }
 
-void ReadSafeFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF, ifstream& istream, ofstream& ostream, int iteration) {
+void ReadSafeFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF,
+	ifstream& keyfilestream, ofstream& safefilestream, ofstream& lockedfilestream, int iteration) {
 	string str;
 	char c;
 	for (int i = 0; i < 4; i++)
 	{
-		istream >> c;
+		keyfilestream >> c;
 		root[i] = (int)c - 48;
 	}
-	ParseHashes(UHF, istream);
-	ParseHashes(LHF, istream);
-	ParseHashes(PHF, istream);
+	ParseHashes(UHF, keyfilestream);
+	ParseHashes(LHF, keyfilestream);
+	ParseHashes(PHF, keyfilestream);
 	MultiLockSafe readMultiSafe(safeSize, lockSize, root, UHF, LHF, PHF);
-	ostream << "NS" << iteration << " ";
-	ostream << readMultiSafe;
+	safefilestream << "NS" << iteration << " ";
+	safefilestream << readMultiSafe;
+	lockedfilestream << readMultiSafe.LNOutput();
 }
 
-void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF, string keyfile, string safefile, ifstream& idatafile, ofstream& odatafile) {
-	idatafile.open(keyfile.c_str());
-	odatafile.open(safefile.c_str());
-	int keyFileSize = ReadKeyFileSize(idatafile);
+void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, int* PHF,
+	string keyfile, string safefile, string lockedfile, int validSafes) {
+	ifstream keyfilestream;
+	ofstream safefilestream;
+	ofstream lockedfilestream;
 
+	keyfilestream.open(keyfile.c_str());
+	safefilestream.open(safefile.c_str());
+	lockedfilestream.open(lockedfile.c_str());
+
+	int keyFileSize = ReadKeyFileSize(keyfilestream);
+	lockedfilestream << "NL " << validSafes << "\n";
 	for (int i = 0; i < keyFileSize; i++)
 	{
-		ReadSafeFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, idatafile, odatafile, i);
+		ReadSafeFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfilestream, safefilestream, lockedfilestream, i);
 	}
-	idatafile.close();
-	odatafile.close();
+
+	keyfilestream.close();
+	safefilestream.close();
+	lockedfilestream.close();
 }

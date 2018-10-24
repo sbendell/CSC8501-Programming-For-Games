@@ -10,6 +10,7 @@
 #include <string>
 #include <cmath>
 #include "FileHandler.h"
+#include "LockCracker.h"
 
 using namespace std;
 
@@ -77,35 +78,50 @@ int main()
 	int validLocksBonus = 0;
 
 	bool runAgain = true;
+	bool generate = true;
 
 	vector<int> roots;
 	roots.reserve(validLocks);
 	string keyfile = "key.txt";
 	string safefile = "multi-safe.txt";
 	string lockedfile = "locked-safe.txt";
+	string crackedsafefile = "cracked-safe.txt.";
 
 	while (runAgain) {
-		cout << "How many solutions should I find?\n";
-		cin >> validLocks;
-		cout << "How many locks per safe?\n";
-		cin >> safeSize;
-		clock_t start = clock();
-		GenerateNewHashes(UHF, LHF, PHF, lockSize);
-		ValidateSafes(iterationCap, validLocks, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocksBonus);
-		if (roots.size() > 0) {
-			OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile);
-			ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, lockedfile, roots.size());
-			cout << "Valid Multisafes: " << validLocks;
-			cout << "\nValid Multisafes Bonus: " << validLocksBonus;
+		char c;
+		cout << "Should I generate or hack safes? g/h";
+		cin >> c;
+		if (c == 'g') {
+			generate = true;
+		}
+		else if (c == 'h') {
+			generate = false;
+		}
+		if(generate) {
+			cout << "How many solutions should I find?\n";
+			cin >> validLocks;
+			cout << "How many locks per safe?\n";
+			cin >> safeSize;
+			clock_t start = clock();
+			GenerateNewHashes(UHF, LHF, PHF, lockSize);
+			ValidateSafes(iterationCap, validLocks, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocksBonus);
+			if (roots.size() > 0) {
+				OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile);
+				ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, lockedfile, roots.size());
+				cout << "Valid Multisafes: " << validLocks;
+				cout << "\nValid Multisafes Bonus: " << validLocksBonus;
+			}
+			else {
+				cout << "Did not find " << validLocks << " valid locks in " << iterationCap << " iterations.";
+			}
+
+			clock_t end = clock();
+			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		}
 		else {
-			cout << "Did not find " << validLocks << " valid locks in " << iterationCap << " iterations.";
+			ReadSafeToHack(keyfile, lockedfile, crackedsafefile);
 		}
-
-		clock_t end = clock();
-		cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		cout << "\n\nWould you like to run again? y/n\n";
-		char c;
 		cin >> c;
 		if (c == 'y') {
 			runAgain = true;

@@ -7,6 +7,7 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include "LockCracker.h"
 
 using namespace std;
 
@@ -111,4 +112,61 @@ void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, 
 	keyfilestream.close();
 	safefilestream.close();
 	lockedfilestream.close();
+}
+
+void ReadSafeToHack(string keyfile, string lockedfile, string crackedsafefile) {
+	ifstream keyfilestream;
+	ifstream lockedfilestream;
+	ofstream crackedsafefil;
+
+	keyfilestream.open(keyfile.c_str());
+	lockedfilestream.open(lockedfile.c_str());
+	crackedsafefil.open(crackedsafefile.c_str());
+
+	int keyFileSize = ReadKeyFileSize(keyfilestream);
+	int lockedFileSize = ReadKeyFileSize(lockedfilestream);
+	for (int i = 0; i < keyFileSize; i++)
+	{
+		int realroot[4];
+		int crackroot[4];
+		int UHF[4];
+		int LHF[4];
+		int PHF[4];
+		string str;
+		char c;
+		int readval;
+
+		lockedfilestream >> str;
+		for (int x = 0; x < 4; x++)
+		{
+			keyfilestream >> c;
+			realroot[x] = (int)c - 48;
+			lockedfilestream >> readval;
+			crackroot[x] = readval;
+		}
+		ParseHashes(UHF, keyfilestream);
+		ParseHashes(LHF, keyfilestream);
+		ParseHashes(PHF, keyfilestream);
+
+		vector<int*> LNs;
+		for (int x = 0; x < 5; x++)
+		{
+			lockedfilestream >> str;
+			int* LN = new int[4];
+			for (int y = 0; y < 4; y++)
+			{
+				lockedfilestream >> readval;
+				LN[y] = readval;
+			}
+			LNs.push_back(LN);
+		}
+
+		MultiLockSafe readMultiSafe(5, 4, realroot, UHF, LHF, PHF);
+		LockCracker cracker(readMultiSafe, crackroot, LNs);
+
+		for (int i = 0; i < LNs.size(); i++)
+		{
+			delete[] LNs[i];
+		}
+	}
 }

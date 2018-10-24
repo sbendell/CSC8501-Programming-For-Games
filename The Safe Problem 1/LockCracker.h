@@ -10,10 +10,18 @@
 class LockCracker
 {
 public:
-	LockCracker(int* Root, vector<int[]> LNs);
+	LockCracker(MultiLockSafe safe, int* Root, vector<int*> LNs);
 	LockCracker();
 	~LockCracker();
 private:
-	MultiLockSafe safe;
+	void CrackSafe();
+	void CrackAllCN();
+	void CrackUHF();
+	void CrackLHF();
+	void CrackPHF();
+	void CrackAllHN();
+	bool CrackFirstLockCN();
+	MultiLockSafe crackSafe;
+	MultiLockSafe realSafe;
 };
 

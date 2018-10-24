@@ -26,11 +26,16 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 }
 
 MultiLockSafe::MultiLockSafe(int Size) {
+	size = Size;
 	for (int i = 0; i < size; i++)
 	{
-		CombinationLock newlock;
+		CombinationLock newlock(4, i);
 		locks.push_back(newlock);
 	}
+}
+
+MultiLockSafe::MultiLockSafe()
+{
 }
 
 MultiLockSafe::~MultiLockSafe()

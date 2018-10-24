@@ -7,6 +7,7 @@ class CombinationLock
 {
 public:
 	CombinationLock(int size, int* Root, int id);
+	CombinationLock(int Size, int ID);
 	CombinationLock();
 	~CombinationLock();
 	int GetROOT(const int position) const { return ROOT[position]; }

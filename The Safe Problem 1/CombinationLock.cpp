@@ -12,6 +12,12 @@ CombinationLock::CombinationLock(int Size, int* Root, int ID)
 	}
 }
 
+CombinationLock::CombinationLock(int Size, int ID)
+{
+	size = Size;
+	id = ID;
+}
+
 CombinationLock::CombinationLock()
 {
 }

@@ -57,9 +57,9 @@ void ValidateSafes(int iterationCap, int validLocks, int safeSize, int lockSize,
 }
 
 void GenerateNewHashes(int* UHF, int* LHF, int* PHF, int lockSize) {
-	RandomArray(UHF, lockSize, 9, -9);
-	RandomArray(LHF, lockSize, 9, -9);
-	RandomArray(PHF, lockSize, 9, -9);
+	RandomArray(UHF, lockSize, 9, 0);
+	RandomArray(LHF, lockSize, 9, 0);
+	RandomArray(PHF, lockSize, 9, 0);
 }
 
 int main()

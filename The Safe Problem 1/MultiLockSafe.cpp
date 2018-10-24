@@ -25,8 +25,17 @@ MultiLockSafe::MultiLockSafe(int Size, int lockSize, int* root, int* Uhf, int* L
 	}
 }
 
-MultiLockSafe::MultiLockSafe() {
+MultiLockSafe::MultiLockSafe(int Size) {
+	size = Size;
+	for (int i = 0; i < size; i++)
+	{
+		CombinationLock newlock(4, i);
+		locks.push_back(newlock);
+	}
+}
 
+MultiLockSafe::MultiLockSafe()
+{
 }
 
 MultiLockSafe::~MultiLockSafe()
@@ -116,4 +125,28 @@ bool MultiLockSafe::IsValidBonus() {
 	}
 
 	return true;
+}
+
+string MultiLockSafe::LNOutput() {
+	string newString;
+
+	newString += "ROOT:";
+	for (int i = 0; i < locks[0].GetSize(); i++)
+	{
+		newString += " " + to_string(locks[0].GetROOT(i));
+	}
+	newString += "\n";
+
+	for (int i = 0; i < locks.size(); i++)
+	{
+		newString += "LN" + to_string(locks[i].GetID()) + ":";
+		for (int x = 0; x < locks[i].GetSize(); x++)
+		{
+			newString += " " + to_string(locks[i].GetLN(x));
+		}
+		newString += "\n";
+	}
+	newString += "\n";
+
+	return newString;
 }

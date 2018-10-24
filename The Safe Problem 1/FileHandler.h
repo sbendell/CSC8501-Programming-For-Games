@@ -114,17 +114,20 @@ void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, 
 	lockedfilestream.close();
 }
 
-void ReadSafeToHack(string keyfile, string lockedfile, string crackedsafefile) {
+void ReadSafeToHack(string keyfile, string lockedfile, string crackedkeyfile, string crackedsafefile) {
 	ifstream keyfilestream;
 	ifstream lockedfilestream;
-	ofstream crackedsafefil;
+	ofstream crackedkeystream;
+	ofstream crackedsafestream;
 
 	keyfilestream.open(keyfile.c_str());
 	lockedfilestream.open(lockedfile.c_str());
-	crackedsafefil.open(crackedsafefile.c_str());
+	crackedkeystream.open(crackedkeyfile.c_str());
+	crackedsafestream.open(crackedsafefile.c_str());
 
 	int keyFileSize = ReadKeyFileSize(keyfilestream);
 	int lockedFileSize = ReadKeyFileSize(lockedfilestream);
+	crackedkeystream << "NS " << keyFileSize << "\n";
 	for (int i = 0; i < keyFileSize; i++)
 	{
 		int realroot[4];
@@ -164,9 +167,25 @@ void ReadSafeToHack(string keyfile, string lockedfile, string crackedsafefile) {
 		MultiLockSafe readMultiSafe(5, 4, realroot, UHF, LHF, PHF);
 		LockCracker cracker(readMultiSafe, crackroot, LNs);
 
+		for (int i = 0; i < 4; i++)
+		{
+			crackedkeystream << crackroot[i];
+		}
+		crackedkeystream << "\n";
+		OutputHash(cracker.GetHashes().UHF, "UHF ", 4, crackedkeystream);
+		OutputHash(cracker.GetHashes().LHF, "LHF ", 4, crackedkeystream);
+		OutputHash(cracker.GetHashes().PHF, "PHF ", 4, crackedkeystream);
+
+		crackedsafestream << "NS" << i << " " << cracker;
+
 		for (int i = 0; i < LNs.size(); i++)
 		{
 			delete[] LNs[i];
 		}
 	}
+
+	keyfilestream.close();
+	lockedfilestream.close();
+	crackedkeystream.close();
+	crackedsafestream.close();
 }

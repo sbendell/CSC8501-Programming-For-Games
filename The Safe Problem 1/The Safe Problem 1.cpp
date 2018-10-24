@@ -85,6 +85,7 @@ int main()
 	string keyfile = "key.txt";
 	string safefile = "multi-safe.txt";
 	string lockedfile = "locked-safe.txt";
+	string crackedkeyfile = "cracked-key.txt.";
 	string crackedsafefile = "cracked-safe.txt.";
 
 	while (runAgain) {
@@ -119,7 +120,11 @@ int main()
 			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		}
 		else {
-			ReadSafeToHack(keyfile, lockedfile, crackedsafefile);
+			clock_t start = clock();
+			ReadSafeToHack(keyfile, lockedfile, crackedkeyfile, crackedsafefile);
+			cout << "Cracked all safes within given locked safe file.\n";
+			clock_t end = clock();
+			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		}
 		cout << "\n\nWould you like to run again? y/n\n";
 		cin >> c;

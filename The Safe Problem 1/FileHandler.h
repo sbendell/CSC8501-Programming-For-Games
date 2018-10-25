@@ -8,6 +8,7 @@
 #include <string>
 #include <cmath>
 #include "LockCracker.h"
+#include "ThreadHandler.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 	for (int i = 0; i < size; i++)
 	{
 		if (i == 0) {
-			if (hash[i] > 0) {
+			if (hash[i] >= 0) {
 				stream << hashname << '+' << hash[i];
 			}
 			else {
@@ -23,7 +24,7 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 			}
 		}
 		else {
-			if (hash[i] > 0) {
+			if (hash[i] >= 0) {
 				stream << "," << '+' << hash[i];
 			}
 			else {
@@ -134,6 +135,24 @@ void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, 
 	lockedfilestream.close();
 }
 
+void WriteCrackedSafesToFile(ofstream& crackedsafestream, ofstream& crackedkeystream, int i, LockCracker cracker) {
+	crackedsafestream << "NS" << i << "\n" << cracker;
+	for (int x = 0; x < cracker.validSolutions.size(); x++)
+	{
+		crackedsafestream << "Candidate Solution " << x << "\n" << cracker.validSolutions[x];
+		crackedkeystream << "Candidate Solution " << x << "\n";
+		crackedkeystream << "ROOT ";
+		for (int j = 0; j < 4; j++)
+		{
+			crackedkeystream << cracker.validSolutions[x].GetLock(0).GetROOT(j);
+		}
+		crackedkeystream << "\n";
+		OutputHash(cracker.validHashes[x].UHF, "UHF ", 4, crackedkeystream);
+		OutputHash(cracker.validHashes[x].LHF, "LHF ", 4, crackedkeystream);
+		OutputHash(cracker.validHashes[x].PHF, "PHF ", 4, crackedkeystream);
+	}
+}
+
 void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafefile) {
 	ifstream lockedfilestream;
 	ofstream crackedkeystream;
@@ -142,6 +161,8 @@ void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafe
 	lockedfilestream.open(lockedfile.c_str());
 	crackedkeystream.open(crackedkeyfile.c_str());
 	crackedsafestream.open(crackedsafefile.c_str());
+
+	ThreadHandler threads;
 
 	int lockedFileSize = ReadKeyFileSize(lockedfilestream);
 	crackedkeystream << "NS " << lockedFileSize << "\n";
@@ -173,26 +194,21 @@ void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafe
 		}
 
 		LockCracker cracker(crackroot, LNs);
+		threads.AddCracker(cracker);
 
-		crackedsafestream << "NS" << i << "\n" << cracker;
-		for (int i = 0; i < cracker.validSolutions.size(); i++)
-		{
-			crackedsafestream << "Candidate Solution " << i << "\n" << cracker.validSolutions[i];
-			crackedkeystream << "Candidate Solution " << i << "\n";
-			crackedkeystream << "ROOT ";
-			for (int i = 0; i < 4; i++)
+		if ((i + 1) % 10 == 0) {
+			threads.RunThreads();
+			for (int k = 0; k < 10; k++)
 			{
-				crackedkeystream << crackroot[i];
+				WriteCrackedSafesToFile(crackedsafestream, crackedkeystream, i, threads.GetCracker(k));
 			}
-			crackedkeystream << "\n";
-			OutputHash(cracker.validHashes[i].UHF, "UHF ", 4, crackedkeystream);
-			OutputHash(cracker.validHashes[i].LHF, "LHF ", 4, crackedkeystream);
-			OutputHash(cracker.validHashes[i].PHF, "PHF ", 4, crackedkeystream);
+			threads.CleanCrackers();
+			threads.CleanThreads();
 		}
 
-		for (int i = 0; i < LNs.size(); i++)
+		for (int x = 0; x < LNs.size(); x++)
 		{
-			delete[] LNs[i];
+			delete[] LNs[x];
 		}
 	}
 	lockedfilestream.close();

@@ -17,7 +17,6 @@ LockCracker::LockCracker(int* Root, vector<int*> LNs)
 		}
 	}
 	crackSafe = newSafe;
-	CrackSafe();
 }
 
 LockCracker::LockCracker()

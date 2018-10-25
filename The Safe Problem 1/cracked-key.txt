@@ -1,1201 +1,1201 @@
 NS 100
 Candidate Solution 0
-ROOT 7926
+ROOT 6666
 UHF 0,0,+2,0
 LHF +5,+5,+6,+5
 PHF +1,+4,0,+6
 Candidate Solution 1
-ROOT 7926
+ROOT 6666
 UHF 0,0,+2,+4
 LHF +5,+5,+6,+1
 PHF +1,+4,0,+6
 Candidate Solution 2
-ROOT 7926
+ROOT 6666
 UHF 0,0,+4,+2
 LHF +5,+5,+4,+3
 PHF +1,+4,0,+6
 Candidate Solution 3
-ROOT 7926
+ROOT 6666
 UHF 0,0,+6,+4
 LHF +5,+5,+2,+1
 PHF +1,+4,0,+6
 Candidate Solution 4
-ROOT 7926
+ROOT 6666
 UHF 0,0,+6,+8
 LHF +5,+5,+2,+7
 PHF +1,+4,0,+6
 Candidate Solution 5
-ROOT 7926
+ROOT 6666
 UHF 0,+1,+4,+3
 LHF +5,+4,+4,+2
 PHF +1,+4,0,+6
 Candidate Solution 6
-ROOT 7926
+ROOT 6666
 UHF 0,+1,+4,+5
 LHF +5,+4,+4,0
 PHF +1,+4,0,+6
 Candidate Solution 7
-ROOT 7926
+ROOT 6666
 UHF 0,+1,+4,+9
 LHF +5,+4,+4,+6
 PHF +1,+4,0,+6
 Candidate Solution 8
-ROOT 7926
+ROOT 6666
 UHF 0,+1,+6,+5
 LHF +5,+4,+2,0
 PHF +1,+4,0,+6
 Candidate Solution 9
-ROOT 7926
+ROOT 6666
 UHF 0,+1,+6,+7
 LHF +5,+4,+2,+8
 PHF +1,+4,0,+6
 Candidate Solution 10
-ROOT 7926
+ROOT 6666
 UHF 0,+3,+6,+5
 LHF +5,+2,+2,0
 PHF +1,+4,0,+6
 Candidate Solution 11
-ROOT 7926
+ROOT 6666
 UHF 0,+3,+6,+7
 LHF +5,+2,+2,+8
 PHF +1,+4,0,+6
 Candidate Solution 12
-ROOT 7926
+ROOT 6666
 UHF 0,+3,+8,+3
 LHF +5,+2,0,+2
 PHF +1,+4,0,+6
 Candidate Solution 13
-ROOT 7926
+ROOT 6666
 UHF 0,+3,+8,+7
 LHF +5,+2,0,+8
 PHF +1,+4,0,+6
 Candidate Solution 14
-ROOT 7926
+ROOT 6666
 UHF 0,+3,+8,+9
 LHF +5,+2,0,+6
 PHF +1,+4,0,+6
 Candidate Solution 15
-ROOT 7926
+ROOT 6666
 UHF 0,+4,0,+2
 LHF +5,+1,+8,+3
 PHF +1,+4,0,+6
 Candidate Solution 16
-ROOT 7926
+ROOT 6666
 UHF 0,+4,0,+8
 LHF +5,+1,+8,+7
 PHF +1,+4,0,+6
 Candidate Solution 17
-ROOT 7926
+ROOT 6666
 UHF 0,+4,+6,+4
 LHF +5,+1,+2,+1
 PHF +1,+4,0,+6
 Candidate Solution 18
-ROOT 7926
+ROOT 6666
 UHF 0,+4,+6,+8
 LHF +5,+1,+2,+7
 PHF +1,+4,0,+6
 Candidate Solution 19
-ROOT 7926
+ROOT 6666
 UHF 0,+4,+8,0
 LHF +5,+1,0,+5
 PHF +1,+4,0,+6
 Candidate Solution 20
-ROOT 7926
+ROOT 6666
 UHF 0,+7,0,+5
 LHF +5,+8,+8,0
 PHF +1,+4,0,+6
 Candidate Solution 21
-ROOT 7926
+ROOT 6666
 UHF 0,+7,0,+9
 LHF +5,+8,+8,+6
 PHF +1,+4,0,+6
 Candidate Solution 22
-ROOT 7926
+ROOT 6666
 UHF 0,+7,+2,+3
 LHF +5,+8,+6,+2
 PHF +1,+4,0,+6
 Candidate Solution 23
-ROOT 7926
+ROOT 6666
 UHF 0,+7,+2,+7
 LHF +5,+8,+6,+8
 PHF +1,+4,0,+6
 Candidate Solution 24
-ROOT 7926
+ROOT 6666
 UHF +1,+1,+3,+1
 LHF +4,+4,+5,+4
 PHF +1,+4,0,+6
 Candidate Solution 25
-ROOT 7926
+ROOT 6666
 UHF +1,+1,+3,+5
 LHF +4,+4,+5,0
 PHF +1,+4,0,+6
 Candidate Solution 26
-ROOT 7926
+ROOT 6666
 UHF +1,+1,+5,+3
 LHF +4,+4,+3,+2
 PHF +1,+4,0,+6
 Candidate Solution 27
-ROOT 7926
+ROOT 6666
 UHF +1,+1,+7,+5
 LHF +4,+4,+1,0
 PHF +1,+4,0,+6
 Candidate Solution 28
-ROOT 7926
+ROOT 6666
 UHF +1,+1,+7,+9
 LHF +4,+4,+1,+6
 PHF +1,+4,0,+6
 Candidate Solution 29
-ROOT 7926
+ROOT 6666
 UHF +1,+2,+5,0
 LHF +4,+3,+3,+5
 PHF +1,+4,0,+6
 Candidate Solution 30
-ROOT 7926
+ROOT 6666
 UHF +1,+2,+5,+4
 LHF +4,+3,+3,+1
 PHF +1,+4,0,+6
 Candidate Solution 31
-ROOT 7926
+ROOT 6666
 UHF +1,+2,+5,+6
 LHF +4,+3,+3,+9
 PHF +1,+4,0,+6
 Candidate Solution 32
-ROOT 7926
+ROOT 6666
 UHF +1,+2,+7,+6
 LHF +4,+3,+1,+9
 PHF +1,+4,0,+6
 Candidate Solution 33
-ROOT 7926
+ROOT 6666
 UHF +1,+2,+7,+8
 LHF +4,+3,+1,+7
 PHF +1,+4,0,+6
 Candidate Solution 34
-ROOT 7926
+ROOT 6666
 UHF +1,+4,+7,+6
 LHF +4,+1,+1,+9
 PHF +1,+4,0,+6
 Candidate Solution 35
-ROOT 7926
+ROOT 6666
 UHF +1,+4,+7,+8
 LHF +4,+1,+1,+7
 PHF +1,+4,0,+6
 Candidate Solution 36
-ROOT 7926
+ROOT 6666
 UHF +1,+4,+9,0
 LHF +4,+1,+9,+5
 PHF +1,+4,0,+6
 Candidate Solution 37
-ROOT 7926
+ROOT 6666
 UHF +1,+4,+9,+4
 LHF +4,+1,+9,+1
 PHF +1,+4,0,+6
 Candidate Solution 38
-ROOT 7926
+ROOT 6666
 UHF +1,+4,+9,+8
 LHF +4,+1,+9,+7
 PHF +1,+4,0,+6
 Candidate Solution 39
-ROOT 7926
+ROOT 6666
 UHF +1,+5,+1,+3
 LHF +4,0,+7,+2
 PHF +1,+4,0,+6
 Candidate Solution 40
-ROOT 7926
+ROOT 6666
 UHF +1,+5,+1,+9
 LHF +4,0,+7,+6
 PHF +1,+4,0,+6
 Candidate Solution 41
-ROOT 7926
+ROOT 6666
 UHF +1,+5,+7,+5
 LHF +4,0,+1,0
 PHF +1,+4,0,+6
 Candidate Solution 42
-ROOT 7926
+ROOT 6666
 UHF +1,+5,+7,+9
 LHF +4,0,+1,+6
 PHF +1,+4,0,+6
 Candidate Solution 43
-ROOT 7926
+ROOT 6666
 UHF +1,+5,+9,+1
 LHF +4,0,+9,+4
 PHF +1,+4,0,+6
 Candidate Solution 44
-ROOT 7926
+ROOT 6666
 UHF +1,+8,+1,0
 LHF +4,+7,+7,+5
 PHF +1,+4,0,+6
 Candidate Solution 45
-ROOT 7926
+ROOT 6666
 UHF +1,+8,+1,+6
 LHF +4,+7,+7,+9
 PHF +1,+4,0,+6
 Candidate Solution 46
-ROOT 7926
+ROOT 6666
 UHF +1,+8,+3,+4
 LHF +4,+7,+5,+1
 PHF +1,+4,0,+6
 Candidate Solution 47
-ROOT 7926
+ROOT 6666
 UHF +1,+8,+3,+8
 LHF +4,+7,+5,+7
 PHF +1,+4,0,+6
 Candidate Solution 48
-ROOT 7926
+ROOT 6666
 UHF +2,+2,+4,+2
 LHF +3,+3,+4,+3
 PHF +1,+4,0,+6
 Candidate Solution 49
-ROOT 7926
+ROOT 6666
 UHF +2,+2,+4,+6
 LHF +3,+3,+4,+9
 PHF +1,+4,0,+6
 Candidate Solution 50
-ROOT 7926
+ROOT 6666
 UHF +2,+2,+6,+4
 LHF +3,+3,+2,+1
 PHF +1,+4,0,+6
 Candidate Solution 51
-ROOT 7926
+ROOT 6666
 UHF +2,+2,+8,0
 LHF +3,+3,0,+5
 PHF +1,+4,0,+6
 Candidate Solution 52
-ROOT 7926
+ROOT 6666
 UHF +2,+2,+8,+6
 LHF +3,+3,0,+9
 PHF +1,+4,0,+6
 Candidate Solution 53
-ROOT 7926
+ROOT 6666
 UHF +2,+3,+6,+1
 LHF +3,+2,+2,+4
 PHF +1,+4,0,+6
 Candidate Solution 54
-ROOT 7926
+ROOT 6666
 UHF +2,+3,+6,+5
 LHF +3,+2,+2,0
 PHF +1,+4,0,+6
 Candidate Solution 55
-ROOT 7926
+ROOT 6666
 UHF +2,+3,+6,+7
 LHF +3,+2,+2,+8
 PHF +1,+4,0,+6
 Candidate Solution 56
-ROOT 7926
+ROOT 6666
 UHF +2,+3,+8,+7
 LHF +3,+2,0,+8
 PHF +1,+4,0,+6
 Candidate Solution 57
-ROOT 7926
+ROOT 6666
 UHF +2,+3,+8,+9
 LHF +3,+2,0,+6
 PHF +1,+4,0,+6
 Candidate Solution 58
-ROOT 7926
+ROOT 6666
 UHF +2,+5,0,+1
 LHF +3,0,+8,+4
 PHF +1,+4,0,+6
 Candidate Solution 59
-ROOT 7926
+ROOT 6666
 UHF +2,+5,0,+5
 LHF +3,0,+8,0
 PHF +1,+4,0,+6
 Candidate Solution 60
-ROOT 7926
+ROOT 6666
 UHF +2,+5,0,+9
 LHF +3,0,+8,+6
 PHF +1,+4,0,+6
 Candidate Solution 61
-ROOT 7926
+ROOT 6666
 UHF +2,+5,+8,+7
 LHF +3,0,0,+8
 PHF +1,+4,0,+6
 Candidate Solution 62
-ROOT 7926
+ROOT 6666
 UHF +2,+5,+8,+9
 LHF +3,0,0,+6
 PHF +1,+4,0,+6
 Candidate Solution 63
-ROOT 7926
+ROOT 6666
 UHF +2,+6,0,+2
 LHF +3,+9,+8,+3
 PHF +1,+4,0,+6
 Candidate Solution 64
-ROOT 7926
+ROOT 6666
 UHF +2,+6,+2,0
 LHF +3,+9,+6,+5
 PHF +1,+4,0,+6
 Candidate Solution 65
-ROOT 7926
+ROOT 6666
 UHF +2,+6,+2,+4
 LHF +3,+9,+6,+1
 PHF +1,+4,0,+6
 Candidate Solution 66
-ROOT 7926
+ROOT 6666
 UHF +2,+6,+8,0
 LHF +3,+9,0,+5
 PHF +1,+4,0,+6
 Candidate Solution 67
-ROOT 7926
+ROOT 6666
 UHF +2,+6,+8,+6
 LHF +3,+9,0,+9
 PHF +1,+4,0,+6
 Candidate Solution 68
-ROOT 7926
+ROOT 6666
 UHF +2,+9,+2,+1
 LHF +3,+6,+6,+4
 PHF +1,+4,0,+6
 Candidate Solution 69
-ROOT 7926
+ROOT 6666
 UHF +2,+9,+2,+7
 LHF +3,+6,+6,+8
 PHF +1,+4,0,+6
 Candidate Solution 70
-ROOT 7926
+ROOT 6666
 UHF +2,+9,+4,+5
 LHF +3,+6,+4,0
 PHF +1,+4,0,+6
 Candidate Solution 71
-ROOT 7926
+ROOT 6666
 UHF +2,+9,+4,+9
 LHF +3,+6,+4,+6
 PHF +1,+4,0,+6
 Candidate Solution 72
-ROOT 7926
+ROOT 6666
 UHF +3,0,+3,+2
 LHF +2,+5,+5,+3
 PHF +1,+4,0,+6
 Candidate Solution 73
-ROOT 7926
+ROOT 6666
 UHF +3,0,+3,+8
 LHF +2,+5,+5,+7
 PHF +1,+4,0,+6
 Candidate Solution 74
-ROOT 7926
+ROOT 6666
 UHF +3,0,+5,0
 LHF +2,+5,+3,+5
 PHF +1,+4,0,+6
 Candidate Solution 75
-ROOT 7926
+ROOT 6666
 UHF +3,0,+5,+6
 LHF +2,+5,+3,+9
 PHF +1,+4,0,+6
 Candidate Solution 76
-ROOT 7926
+ROOT 6666
 UHF +3,+3,+5,+3
 LHF +2,+2,+3,+2
 PHF +1,+4,0,+6
 Candidate Solution 77
-ROOT 7926
+ROOT 6666
 UHF +3,+3,+5,+7
 LHF +2,+2,+3,+8
 PHF +1,+4,0,+6
 Candidate Solution 78
-ROOT 7926
+ROOT 6666
 UHF +3,+3,+7,+5
 LHF +2,+2,+1,0
 PHF +1,+4,0,+6
 Candidate Solution 79
-ROOT 7926
+ROOT 6666
 UHF +3,+3,+9,+1
 LHF +2,+2,+9,+4
 PHF +1,+4,0,+6
 Candidate Solution 80
-ROOT 7926
+ROOT 6666
 UHF +3,+3,+9,+7
 LHF +2,+2,+9,+8
 PHF +1,+4,0,+6
 Candidate Solution 81
-ROOT 7926
+ROOT 6666
 UHF +3,+4,+7,+2
 LHF +2,+1,+1,+3
 PHF +1,+4,0,+6
 Candidate Solution 82
-ROOT 7926
+ROOT 6666
 UHF +3,+4,+7,+6
 LHF +2,+1,+1,+9
 PHF +1,+4,0,+6
 Candidate Solution 83
-ROOT 7926
+ROOT 6666
 UHF +3,+4,+7,+8
 LHF +2,+1,+1,+7
 PHF +1,+4,0,+6
 Candidate Solution 84
-ROOT 7926
+ROOT 6666
 UHF +3,+4,+9,0
 LHF +2,+1,+9,+5
 PHF +1,+4,0,+6
 Candidate Solution 85
-ROOT 7926
+ROOT 6666
 UHF +3,+4,+9,+8
 LHF +2,+1,+9,+7
 PHF +1,+4,0,+6
 Candidate Solution 86
-ROOT 7926
+ROOT 6666
 UHF +3,+6,+1,0
 LHF +2,+9,+7,+5
 PHF +1,+4,0,+6
 Candidate Solution 87
-ROOT 7926
+ROOT 6666
 UHF +3,+6,+1,+2
 LHF +2,+9,+7,+3
 PHF +1,+4,0,+6
 Candidate Solution 88
-ROOT 7926
+ROOT 6666
 UHF +3,+6,+1,+6
 LHF +2,+9,+7,+9
 PHF +1,+4,0,+6
 Candidate Solution 89
-ROOT 7926
+ROOT 6666
 UHF +3,+6,+9,0
 LHF +2,+9,+9,+5
 PHF +1,+4,0,+6
 Candidate Solution 90
-ROOT 7926
+ROOT 6666
 UHF +3,+6,+9,+8
 LHF +2,+9,+9,+7
 PHF +1,+4,0,+6
 Candidate Solution 91
-ROOT 7926
+ROOT 6666
 UHF +3,+7,+1,+3
 LHF +2,+8,+7,+2
 PHF +1,+4,0,+6
 Candidate Solution 92
-ROOT 7926
+ROOT 6666
 UHF +3,+7,+3,+1
 LHF +2,+8,+5,+4
 PHF +1,+4,0,+6
 Candidate Solution 93
-ROOT 7926
+ROOT 6666
 UHF +3,+7,+3,+5
 LHF +2,+8,+5,0
 PHF +1,+4,0,+6
 Candidate Solution 94
-ROOT 7926
+ROOT 6666
 UHF +3,+7,+9,+1
 LHF +2,+8,+9,+4
 PHF +1,+4,0,+6
 Candidate Solution 95
-ROOT 7926
+ROOT 6666
 UHF +3,+7,+9,+7
 LHF +2,+8,+9,+8
 PHF +1,+4,0,+6
 Candidate Solution 96
-ROOT 7926
+ROOT 6666
 UHF +4,+1,+4,+3
 LHF +1,+4,+4,+2
 PHF +1,+4,0,+6
 Candidate Solution 97
-ROOT 7926
+ROOT 6666
 UHF +4,+1,+4,+9
 LHF +1,+4,+4,+6
 PHF +1,+4,0,+6
 Candidate Solution 98
-ROOT 7926
+ROOT 6666
 UHF +4,+1,+6,+1
 LHF +1,+4,+2,+4
 PHF +1,+4,0,+6
 Candidate Solution 99
-ROOT 7926
+ROOT 6666
 UHF +4,+1,+6,+7
 LHF +1,+4,+2,+8
 PHF +1,+4,0,+6
 Candidate Solution 100
-ROOT 7926
+ROOT 6666
 UHF +4,+4,0,+2
 LHF +1,+1,+8,+3
 PHF +1,+4,0,+6
 Candidate Solution 101
-ROOT 7926
+ROOT 6666
 UHF +4,+4,0,+8
 LHF +1,+1,+8,+7
 PHF +1,+4,0,+6
 Candidate Solution 102
-ROOT 7926
+ROOT 6666
 UHF +4,+4,+6,+4
 LHF +1,+1,+2,+1
 PHF +1,+4,0,+6
 Candidate Solution 103
-ROOT 7926
+ROOT 6666
 UHF +4,+4,+6,+8
 LHF +1,+1,+2,+7
 PHF +1,+4,0,+6
 Candidate Solution 104
-ROOT 7926
+ROOT 6666
 UHF +4,+4,+8,+6
 LHF +1,+1,0,+9
 PHF +1,+4,0,+6
 Candidate Solution 105
-ROOT 7926
+ROOT 6666
 UHF +4,+5,0,+1
 LHF +1,0,+8,+4
 PHF +1,+4,0,+6
 Candidate Solution 106
-ROOT 7926
+ROOT 6666
 UHF +4,+5,0,+9
 LHF +1,0,+8,+6
 PHF +1,+4,0,+6
 Candidate Solution 107
-ROOT 7926
+ROOT 6666
 UHF +4,+5,+8,+3
 LHF +1,0,0,+2
 PHF +1,+4,0,+6
 Candidate Solution 108
-ROOT 7926
+ROOT 6666
 UHF +4,+5,+8,+7
 LHF +1,0,0,+8
 PHF +1,+4,0,+6
 Candidate Solution 109
-ROOT 7926
+ROOT 6666
 UHF +4,+5,+8,+9
 LHF +1,0,0,+6
 PHF +1,+4,0,+6
 Candidate Solution 110
-ROOT 7926
+ROOT 6666
 UHF +4,+7,0,+1
 LHF +1,+8,+8,+4
 PHF +1,+4,0,+6
 Candidate Solution 111
-ROOT 7926
+ROOT 6666
 UHF +4,+7,0,+9
 LHF +1,+8,+8,+6
 PHF +1,+4,0,+6
 Candidate Solution 112
-ROOT 7926
+ROOT 6666
 UHF +4,+7,+2,+1
 LHF +1,+8,+6,+4
 PHF +1,+4,0,+6
 Candidate Solution 113
-ROOT 7926
+ROOT 6666
 UHF +4,+7,+2,+3
 LHF +1,+8,+6,+2
 PHF +1,+4,0,+6
 Candidate Solution 114
-ROOT 7926
+ROOT 6666
 UHF +4,+7,+2,+7
 LHF +1,+8,+6,+8
 PHF +1,+4,0,+6
 Candidate Solution 115
-ROOT 7926
+ROOT 6666
 UHF +4,+8,0,+2
 LHF +1,+7,+8,+3
 PHF +1,+4,0,+6
 Candidate Solution 116
-ROOT 7926
+ROOT 6666
 UHF +4,+8,0,+8
 LHF +1,+7,+8,+7
 PHF +1,+4,0,+6
 Candidate Solution 117
-ROOT 7926
+ROOT 6666
 UHF +4,+8,+2,+4
 LHF +1,+7,+6,+1
 PHF +1,+4,0,+6
 Candidate Solution 118
-ROOT 7926
+ROOT 6666
 UHF +4,+8,+4,+2
 LHF +1,+7,+4,+3
 PHF +1,+4,0,+6
 Candidate Solution 119
-ROOT 7926
+ROOT 6666
 UHF +4,+8,+4,+6
 LHF +1,+7,+4,+9
 PHF +1,+4,0,+6
 Candidate Solution 120
-ROOT 7926
+ROOT 6666
 UHF +5,+2,+5,0
 LHF 0,+3,+3,+5
 PHF +1,+4,0,+6
 Candidate Solution 121
-ROOT 7926
+ROOT 6666
 UHF +5,+2,+5,+4
 LHF 0,+3,+3,+1
 PHF +1,+4,0,+6
 Candidate Solution 122
-ROOT 7926
+ROOT 6666
 UHF +5,+2,+7,+2
 LHF 0,+3,+1,+3
 PHF +1,+4,0,+6
 Candidate Solution 123
-ROOT 7926
+ROOT 6666
 UHF +5,+2,+7,+8
 LHF 0,+3,+1,+7
 PHF +1,+4,0,+6
 Candidate Solution 124
-ROOT 7926
+ROOT 6666
 UHF +5,+5,+1,+3
 LHF 0,0,+7,+2
 PHF +1,+4,0,+6
 Candidate Solution 125
-ROOT 7926
+ROOT 6666
 UHF +5,+5,+1,+9
 LHF 0,0,+7,+6
 PHF +1,+4,0,+6
 Candidate Solution 126
-ROOT 7926
+ROOT 6666
 UHF +5,+5,+7,+5
 LHF 0,0,+1,0
 PHF +1,+4,0,+6
 Candidate Solution 127
-ROOT 7926
+ROOT 6666
 UHF +5,+5,+7,+9
 LHF 0,0,+1,+6
 PHF +1,+4,0,+6
 Candidate Solution 128
-ROOT 7926
+ROOT 6666
 UHF +5,+5,+9,+7
 LHF 0,0,+9,+8
 PHF +1,+4,0,+6
 Candidate Solution 129
-ROOT 7926
+ROOT 6666
 UHF +5,+6,+1,0
 LHF 0,+9,+7,+5
 PHF +1,+4,0,+6
 Candidate Solution 130
-ROOT 7926
+ROOT 6666
 UHF +5,+6,+1,+2
 LHF 0,+9,+7,+3
 PHF +1,+4,0,+6
 Candidate Solution 131
-ROOT 7926
+ROOT 6666
 UHF +5,+6,+9,0
 LHF 0,+9,+9,+5
 PHF +1,+4,0,+6
 Candidate Solution 132
-ROOT 7926
+ROOT 6666
 UHF +5,+6,+9,+4
 LHF 0,+9,+9,+1
 PHF +1,+4,0,+6
 Candidate Solution 133
-ROOT 7926
+ROOT 6666
 UHF +5,+6,+9,+8
 LHF 0,+9,+9,+7
 PHF +1,+4,0,+6
 Candidate Solution 134
-ROOT 7926
+ROOT 6666
 UHF +5,+8,+1,0
 LHF 0,+7,+7,+5
 PHF +1,+4,0,+6
 Candidate Solution 135
-ROOT 7926
+ROOT 6666
 UHF +5,+8,+1,+2
 LHF 0,+7,+7,+3
 PHF +1,+4,0,+6
 Candidate Solution 136
-ROOT 7926
+ROOT 6666
 UHF +5,+8,+3,+2
 LHF 0,+7,+5,+3
 PHF +1,+4,0,+6
 Candidate Solution 137
-ROOT 7926
+ROOT 6666
 UHF +5,+8,+3,+4
 LHF 0,+7,+5,+1
 PHF +1,+4,0,+6
 Candidate Solution 138
-ROOT 7926
+ROOT 6666
 UHF +5,+8,+3,+8
 LHF 0,+7,+5,+7
 PHF +1,+4,0,+6
 Candidate Solution 139
-ROOT 7926
+ROOT 6666
 UHF +5,+9,+1,+3
 LHF 0,+6,+7,+2
 PHF +1,+4,0,+6
 Candidate Solution 140
-ROOT 7926
+ROOT 6666
 UHF +5,+9,+1,+9
 LHF 0,+6,+7,+6
 PHF +1,+4,0,+6
 Candidate Solution 141
-ROOT 7926
+ROOT 6666
 UHF +5,+9,+3,+5
 LHF 0,+6,+5,0
 PHF +1,+4,0,+6
 Candidate Solution 142
-ROOT 7926
+ROOT 6666
 UHF +5,+9,+5,+3
 LHF 0,+6,+3,+2
 PHF +1,+4,0,+6
 Candidate Solution 143
-ROOT 7926
+ROOT 6666
 UHF +5,+9,+5,+7
 LHF 0,+6,+3,+8
 PHF +1,+4,0,+6
 Candidate Solution 144
-ROOT 7926
+ROOT 6666
 UHF +6,0,+2,0
 LHF +9,+5,+6,+5
 PHF +1,+4,0,+6
 Candidate Solution 145
-ROOT 7926
+ROOT 6666
 UHF +6,0,+2,+4
 LHF +9,+5,+6,+1
 PHF +1,+4,0,+6
 Candidate Solution 146
-ROOT 7926
+ROOT 6666
 UHF +6,0,+4,+6
 LHF +9,+5,+4,+9
 PHF +1,+4,0,+6
 Candidate Solution 147
-ROOT 7926
+ROOT 6666
 UHF +6,0,+6,+4
 LHF +9,+5,+2,+1
 PHF +1,+4,0,+6
 Candidate Solution 148
-ROOT 7926
+ROOT 6666
 UHF +6,0,+6,+8
 LHF +9,+5,+2,+7
 PHF +1,+4,0,+6
 Candidate Solution 149
-ROOT 7926
+ROOT 6666
 UHF +6,+3,+6,+1
 LHF +9,+2,+2,+4
 PHF +1,+4,0,+6
 Candidate Solution 150
-ROOT 7926
+ROOT 6666
 UHF +6,+3,+6,+5
 LHF +9,+2,+2,0
 PHF +1,+4,0,+6
 Candidate Solution 151
-ROOT 7926
+ROOT 6666
 UHF +6,+3,+8,+3
 LHF +9,+2,0,+2
 PHF +1,+4,0,+6
 Candidate Solution 152
-ROOT 7926
+ROOT 6666
 UHF +6,+3,+8,+9
 LHF +9,+2,0,+6
 PHF +1,+4,0,+6
 Candidate Solution 153
-ROOT 7926
+ROOT 6666
 UHF +6,+6,0,+8
 LHF +9,+9,+8,+7
 PHF +1,+4,0,+6
 Candidate Solution 154
-ROOT 7926
+ROOT 6666
 UHF +6,+6,+2,0
 LHF +9,+9,+6,+5
 PHF +1,+4,0,+6
 Candidate Solution 155
-ROOT 7926
+ROOT 6666
 UHF +6,+6,+2,+4
 LHF +9,+9,+6,+1
 PHF +1,+4,0,+6
 Candidate Solution 156
-ROOT 7926
+ROOT 6666
 UHF +6,+6,+8,0
 LHF +9,+9,0,+5
 PHF +1,+4,0,+6
 Candidate Solution 157
-ROOT 7926
+ROOT 6666
 UHF +6,+6,+8,+6
 LHF +9,+9,0,+9
 PHF +1,+4,0,+6
 Candidate Solution 158
-ROOT 7926
+ROOT 6666
 UHF +6,+7,0,+1
 LHF +9,+8,+8,+4
 PHF +1,+4,0,+6
 Candidate Solution 159
-ROOT 7926
+ROOT 6666
 UHF +6,+7,0,+5
 LHF +9,+8,+8,0
 PHF +1,+4,0,+6
 Candidate Solution 160
-ROOT 7926
+ROOT 6666
 UHF +6,+7,0,+9
 LHF +9,+8,+8,+6
 PHF +1,+4,0,+6
 Candidate Solution 161
-ROOT 7926
+ROOT 6666
 UHF +6,+7,+2,+1
 LHF +9,+8,+6,+4
 PHF +1,+4,0,+6
 Candidate Solution 162
-ROOT 7926
+ROOT 6666
 UHF +6,+7,+2,+3
 LHF +9,+8,+6,+2
 PHF +1,+4,0,+6
 Candidate Solution 163
-ROOT 7926
+ROOT 6666
 UHF +6,+9,+2,+1
 LHF +9,+6,+6,+4
 PHF +1,+4,0,+6
 Candidate Solution 164
-ROOT 7926
+ROOT 6666
 UHF +6,+9,+2,+3
 LHF +9,+6,+6,+2
 PHF +1,+4,0,+6
 Candidate Solution 165
-ROOT 7926
+ROOT 6666
 UHF +6,+9,+4,+3
 LHF +9,+6,+4,+2
 PHF +1,+4,0,+6
 Candidate Solution 166
-ROOT 7926
+ROOT 6666
 UHF +6,+9,+4,+5
 LHF +9,+6,+4,0
 PHF +1,+4,0,+6
 Candidate Solution 167
-ROOT 7926
+ROOT 6666
 UHF +6,+9,+4,+9
 LHF +9,+6,+4,+6
 PHF +1,+4,0,+6
 Candidate Solution 168
-ROOT 7926
+ROOT 6666
 UHF +7,0,+3,+2
 LHF +8,+5,+5,+3
 PHF +1,+4,0,+6
 Candidate Solution 169
-ROOT 7926
+ROOT 6666
 UHF +7,0,+3,+4
 LHF +8,+5,+5,+1
 PHF +1,+4,0,+6
 Candidate Solution 170
-ROOT 7926
+ROOT 6666
 UHF +7,0,+5,0
 LHF +8,+5,+3,+5
 PHF +1,+4,0,+6
 Candidate Solution 171
-ROOT 7926
+ROOT 6666
 UHF +7,0,+5,+4
 LHF +8,+5,+3,+1
 PHF +1,+4,0,+6
 Candidate Solution 172
-ROOT 7926
+ROOT 6666
 UHF +7,0,+5,+6
 LHF +8,+5,+3,+9
 PHF +1,+4,0,+6
 Candidate Solution 173
-ROOT 7926
+ROOT 6666
 UHF +7,+1,+3,+1
 LHF +8,+4,+5,+4
 PHF +1,+4,0,+6
 Candidate Solution 174
-ROOT 7926
+ROOT 6666
 UHF +7,+1,+3,+5
 LHF +8,+4,+5,0
 PHF +1,+4,0,+6
 Candidate Solution 175
-ROOT 7926
+ROOT 6666
 UHF +7,+1,+5,+7
 LHF +8,+4,+3,+8
 PHF +1,+4,0,+6
 Candidate Solution 176
-ROOT 7926
+ROOT 6666
 UHF +7,+1,+7,+5
 LHF +8,+4,+1,0
 PHF +1,+4,0,+6
 Candidate Solution 177
-ROOT 7926
+ROOT 6666
 UHF +7,+1,+7,+9
 LHF +8,+4,+1,+6
 PHF +1,+4,0,+6
 Candidate Solution 178
-ROOT 7926
+ROOT 6666
 UHF +7,+4,+7,+2
 LHF +8,+1,+1,+3
 PHF +1,+4,0,+6
 Candidate Solution 179
-ROOT 7926
+ROOT 6666
 UHF +7,+4,+7,+6
 LHF +8,+1,+1,+9
 PHF +1,+4,0,+6
 Candidate Solution 180
-ROOT 7926
+ROOT 6666
 UHF +7,+4,+9,0
 LHF +8,+1,+9,+5
 PHF +1,+4,0,+6
 Candidate Solution 181
-ROOT 7926
+ROOT 6666
 UHF +7,+4,+9,+4
 LHF +8,+1,+9,+1
 PHF +1,+4,0,+6
 Candidate Solution 182
-ROOT 7926
+ROOT 6666
 UHF +7,+7,+1,+9
 LHF +8,+8,+7,+6
 PHF +1,+4,0,+6
 Candidate Solution 183
-ROOT 7926
+ROOT 6666
 UHF +7,+7,+3,+1
 LHF +8,+8,+5,+4
 PHF +1,+4,0,+6
 Candidate Solution 184
-ROOT 7926
+ROOT 6666
 UHF +7,+7,+3,+5
 LHF +8,+8,+5,0
 PHF +1,+4,0,+6
 Candidate Solution 185
-ROOT 7926
+ROOT 6666
 UHF +7,+7,+9,+1
 LHF +8,+8,+9,+4
 PHF +1,+4,0,+6
 Candidate Solution 186
-ROOT 7926
+ROOT 6666
 UHF +7,+7,+9,+7
 LHF +8,+8,+9,+8
 PHF +1,+4,0,+6
 Candidate Solution 187
-ROOT 7926
+ROOT 6666
 UHF +7,+8,+1,0
 LHF +8,+7,+7,+5
 PHF +1,+4,0,+6
 Candidate Solution 188
-ROOT 7926
+ROOT 6666
 UHF +7,+8,+1,+2
 LHF +8,+7,+7,+3
 PHF +1,+4,0,+6
 Candidate Solution 189
-ROOT 7926
+ROOT 6666
 UHF +7,+8,+1,+6
 LHF +8,+7,+7,+9
 PHF +1,+4,0,+6
 Candidate Solution 190
-ROOT 7926
+ROOT 6666
 UHF +7,+8,+3,+2
 LHF +8,+7,+5,+3
 PHF +1,+4,0,+6
 Candidate Solution 191
-ROOT 7926
+ROOT 6666
 UHF +7,+8,+3,+4
 LHF +8,+7,+5,+1
 PHF +1,+4,0,+6
 Candidate Solution 192
-ROOT 7926
+ROOT 6666
 UHF +8,+1,+4,+3
 LHF +7,+4,+4,+2
 PHF +1,+4,0,+6
 Candidate Solution 193
-ROOT 7926
+ROOT 6666
 UHF +8,+1,+4,+5
 LHF +7,+4,+4,0
 PHF +1,+4,0,+6
 Candidate Solution 194
-ROOT 7926
+ROOT 6666
 UHF +8,+1,+6,+1
 LHF +7,+4,+2,+4
 PHF +1,+4,0,+6
 Candidate Solution 195
-ROOT 7926
+ROOT 6666
 UHF +8,+1,+6,+5
 LHF +7,+4,+2,0
 PHF +1,+4,0,+6
 Candidate Solution 196
-ROOT 7926
+ROOT 6666
 UHF +8,+1,+6,+7
 LHF +7,+4,+2,+8
 PHF +1,+4,0,+6
 Candidate Solution 197
-ROOT 7926
+ROOT 6666
 UHF +8,+2,+4,+2
 LHF +7,+3,+4,+3
 PHF +1,+4,0,+6
 Candidate Solution 198
-ROOT 7926
+ROOT 6666
 UHF +8,+2,+4,+6
 LHF +7,+3,+4,+9
 PHF +1,+4,0,+6
 Candidate Solution 199
-ROOT 7926
+ROOT 6666
 UHF +8,+2,+6,+8
 LHF +7,+3,+2,+7
 PHF +1,+4,0,+6
 Candidate Solution 200
-ROOT 7926
+ROOT 6666
 UHF +8,+2,+8,0
 LHF +7,+3,0,+5
 PHF +1,+4,0,+6
 Candidate Solution 201
-ROOT 7926
+ROOT 6666
 UHF +8,+2,+8,+6
 LHF +7,+3,0,+9
 PHF +1,+4,0,+6
 Candidate Solution 202
-ROOT 7926
+ROOT 6666
 UHF +8,+5,0,+1
 LHF +7,0,+8,+4
 PHF +1,+4,0,+6
 Candidate Solution 203
-ROOT 7926
+ROOT 6666
 UHF +8,+5,0,+5
 LHF +7,0,+8,0
 PHF +1,+4,0,+6
 Candidate Solution 204
-ROOT 7926
+ROOT 6666
 UHF +8,+5,+8,+3
 LHF +7,0,0,+2
 PHF +1,+4,0,+6
 Candidate Solution 205
-ROOT 7926
+ROOT 6666
 UHF +8,+5,+8,+7
 LHF +7,0,0,+8
 PHF +1,+4,0,+6
 Candidate Solution 206
-ROOT 7926
+ROOT 6666
 UHF +8,+8,0,+2
 LHF +7,+7,+8,+3
 PHF +1,+4,0,+6
 Candidate Solution 207
-ROOT 7926
+ROOT 6666
 UHF +8,+8,0,+8
 LHF +7,+7,+8,+7
 PHF +1,+4,0,+6
 Candidate Solution 208
-ROOT 7926
+ROOT 6666
 UHF +8,+8,+2,0
 LHF +7,+7,+6,+5
 PHF +1,+4,0,+6
 Candidate Solution 209
-ROOT 7926
+ROOT 6666
 UHF +8,+8,+4,+2
 LHF +7,+7,+4,+3
 PHF +1,+4,0,+6
 Candidate Solution 210
-ROOT 7926
+ROOT 6666
 UHF +8,+8,+4,+6
 LHF +7,+7,+4,+9
 PHF +1,+4,0,+6
 Candidate Solution 211
-ROOT 7926
+ROOT 6666
 UHF +8,+9,+2,+1
 LHF +7,+6,+6,+4
 PHF +1,+4,0,+6
 Candidate Solution 212
-ROOT 7926
+ROOT 6666
 UHF +8,+9,+2,+3
 LHF +7,+6,+6,+2
 PHF +1,+4,0,+6
 Candidate Solution 213
-ROOT 7926
+ROOT 6666
 UHF +8,+9,+2,+7
 LHF +7,+6,+6,+8
 PHF +1,+4,0,+6
 Candidate Solution 214
-ROOT 7926
+ROOT 6666
 UHF +8,+9,+4,+3
 LHF +7,+6,+4,+2
 PHF +1,+4,0,+6
 Candidate Solution 215
-ROOT 7926
+ROOT 6666
 UHF +8,+9,+4,+5
 LHF +7,+6,+4,0
 PHF +1,+4,0,+6
 Candidate Solution 216
-ROOT 7926
+ROOT 6666
 UHF +9,0,+3,+2
 LHF +6,+5,+5,+3
 PHF +1,+4,0,+6
 Candidate Solution 217
-ROOT 7926
+ROOT 6666
 UHF +9,0,+3,+4
 LHF +6,+5,+5,+1
 PHF +1,+4,0,+6
 Candidate Solution 218
-ROOT 7926
+ROOT 6666
 UHF +9,0,+3,+8
 LHF +6,+5,+5,+7
 PHF +1,+4,0,+6
 Candidate Solution 219
-ROOT 7926
+ROOT 6666
 UHF +9,0,+5,+4
 LHF +6,+5,+3,+1
 PHF +1,+4,0,+6
 Candidate Solution 220
-ROOT 7926
+ROOT 6666
 UHF +9,0,+5,+6
 LHF +6,+5,+3,+9
 PHF +1,+4,0,+6
 Candidate Solution 221
-ROOT 7926
+ROOT 6666
 UHF +9,+2,+5,+4
 LHF +6,+3,+3,+1
 PHF +1,+4,0,+6
 Candidate Solution 222
-ROOT 7926
+ROOT 6666
 UHF +9,+2,+5,+6
 LHF +6,+3,+3,+9
 PHF +1,+4,0,+6
 Candidate Solution 223
-ROOT 7926
+ROOT 6666
 UHF +9,+2,+7,+2
 LHF +6,+3,+1,+3
 PHF +1,+4,0,+6
 Candidate Solution 224
-ROOT 7926
+ROOT 6666
 UHF +9,+2,+7,+6
 LHF +6,+3,+1,+9
 PHF +1,+4,0,+6
 Candidate Solution 225
-ROOT 7926
+ROOT 6666
 UHF +9,+2,+7,+8
 LHF +6,+3,+1,+7
 PHF +1,+4,0,+6
 Candidate Solution 226
-ROOT 7926
+ROOT 6666
 UHF +9,+3,+5,+3
 LHF +6,+2,+3,+2
 PHF +1,+4,0,+6
 Candidate Solution 227
-ROOT 7926
+ROOT 6666
 UHF +9,+3,+5,+7
 LHF +6,+2,+3,+8
 PHF +1,+4,0,+6
 Candidate Solution 228
-ROOT 7926
+ROOT 6666
 UHF +9,+3,+7,+9
 LHF +6,+2,+1,+6
 PHF +1,+4,0,+6
 Candidate Solution 229
-ROOT 7926
+ROOT 6666
 UHF +9,+3,+9,+1
 LHF +6,+2,+9,+4
 PHF +1,+4,0,+6
 Candidate Solution 230
-ROOT 7926
+ROOT 6666
 UHF +9,+3,+9,+7
 LHF +6,+2,+9,+8
 PHF +1,+4,0,+6
 Candidate Solution 231
-ROOT 7926
+ROOT 6666
 UHF +9,+6,+1,+2
 LHF +6,+9,+7,+3
 PHF +1,+4,0,+6
 Candidate Solution 232
-ROOT 7926
+ROOT 6666
 UHF +9,+6,+1,+6
 LHF +6,+9,+7,+9
 PHF +1,+4,0,+6
 Candidate Solution 233
-ROOT 7926
+ROOT 6666
 UHF +9,+6,+9,+4
 LHF +6,+9,+9,+1
 PHF +1,+4,0,+6
 Candidate Solution 234
-ROOT 7926
+ROOT 6666
 UHF +9,+6,+9,+8
 LHF +6,+9,+9,+7
 PHF +1,+4,0,+6
 Candidate Solution 235
-ROOT 7926
+ROOT 6666
 UHF +9,+9,+1,+3
 LHF +6,+6,+7,+2
 PHF +1,+4,0,+6
 Candidate Solution 236
-ROOT 7926
+ROOT 6666
 UHF +9,+9,+1,+9
 LHF +6,+6,+7,+6
 PHF +1,+4,0,+6
 Candidate Solution 237
-ROOT 7926
+ROOT 6666
 UHF +9,+9,+3,+1
 LHF +6,+6,+5,+4
 PHF +1,+4,0,+6
 Candidate Solution 238
-ROOT 7926
+ROOT 6666
 UHF +9,+9,+5,+3
 LHF +6,+6,+3,+2
 PHF +1,+4,0,+6
 Candidate Solution 239
-ROOT 7926
+ROOT 6666
 UHF +9,+9,+5,+7
 LHF +6,+6,+3,+8
 PHF +1,+4,0,+6

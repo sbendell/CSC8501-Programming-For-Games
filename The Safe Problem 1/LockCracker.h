@@ -23,8 +23,8 @@ public:
 	Hashes& GetHashes() { return hashes; }
 	vector<MultiLockSafe> validSolutions;
 	vector<Hashes> validHashes;
-private:
 	void CrackSafe();
+private:
 	void SetHash(int hash[4], int first, int second, int third, int fourth);
 	bool CrackAllCN();
 	void CrackPHF();

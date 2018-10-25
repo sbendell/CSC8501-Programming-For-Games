@@ -82,11 +82,12 @@ int main()
 
 	vector<int> roots;
 	roots.reserve(validLocks);
-	string keyfile = "key.txt";
-	string safefile = "multi-safe.txt";
-	string lockedfile = "locked-safe.txt";
-	string crackedkeyfile = "cracked-key.txt.";
-	string crackedsafefile = "cracked-safe.txt.";
+	string keyfile = "Key Files/key.txt";
+	string safefile = "Key Files/multi-safe.txt";
+	string lockedfile = "Key Files/locked-safe";
+	string crackedkeyfile = "Key Files/cracked-key.txt";
+	string crackedsafefile = "Key Files/cracked-safe.txt";
+	string extension = ".txt";
 
 	while (runAgain) {
 		char c;
@@ -108,7 +109,7 @@ int main()
 			ValidateSafes(iterationCap, validLocks, safeSize, lockSize, root, tempRoot, UHF, LHF, PHF, roots, validLocksBonus);
 			if (roots.size() > 0) {
 				OutputToKeyFile(roots, lockSize, UHF, LHF, PHF, keyfile);
-				ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, lockedfile, roots.size());
+				ReadFromKeyFile(root, safeSize, lockSize, UHF, LHF, PHF, keyfile, safefile, lockedfile + extension, roots.size());
 				cout << "Valid Multisafes: " << validLocks;
 				cout << "\nValid Multisafes Bonus: " << validLocksBonus;
 			}
@@ -121,8 +122,21 @@ int main()
 		}
 		else {
 			clock_t start = clock();
-			ReadSafeToHack(lockedfile, crackedkeyfile, crackedsafefile);
-			cout << "Cracked all safes within given locked safe file.\n";
+			cout << "Which locked-safe file would you like to open?\n";
+			int temp;
+			cin >> temp;
+			try {
+				if (temp == 0) {
+					ReadSafeToHack(lockedfile + extension, crackedkeyfile, crackedsafefile);
+				}
+				else {
+					ReadSafeToHack(lockedfile + to_string(temp) + extension, crackedkeyfile, crackedsafefile);
+				}
+				cout << "Cracked all safes within given locked safe file.\n";
+			}
+			catch (invalid_argument &iae) {
+				cout << "Problem cracking safes: " << iae.what();
+			}
 			clock_t end = clock();
 			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		}

@@ -153,7 +153,7 @@ void WriteCrackedSafesToFile(ofstream& crackedsafestream, ofstream& crackedkeyst
 	}
 }
 
-void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafefile) {
+void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafefile) throw (invalid_argument) {
 	ifstream lockedfilestream;
 	ofstream crackedkeystream;
 	ofstream crackedsafestream;
@@ -161,6 +161,9 @@ void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafe
 	lockedfilestream.open(lockedfile.c_str());
 	crackedkeystream.open(crackedkeyfile.c_str());
 	crackedsafestream.open(crackedsafefile.c_str());
+
+	if (lockedfilestream.fail())
+		throw invalid_argument("no file exists: " + lockedfile);
 
 	ThreadHandler threads;
 

@@ -126,6 +126,7 @@ int main()
 			clock_t end = clock();
 			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";
 		}
+		roots.clear();
 		cout << "\n\nWould you like to run again? y/n\n";
 		cin >> c;
 		if (c == 'y') {

@@ -16,7 +16,7 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 	for (int i = 0; i < size; i++)
 	{
 		if (i == 0) {
-			if (hash[i] > 0) {
+			if (hash[i] >= 0) {
 				stream << hashname << '+' << hash[i];
 			}
 			else {
@@ -24,7 +24,7 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 			}
 		}
 		else {
-			if (hash[i] > 0) {
+			if (hash[i] >= 0) {
 				stream << "," << '+' << hash[i];
 			}
 			else {
@@ -135,7 +135,7 @@ void ReadFromKeyFile(int* root, int safeSize, int lockSize, int* UHF, int* LHF, 
 	lockedfilestream.close();
 }
 
-void WriteCrackedSafesToFile(ofstream& crackedsafestream, ofstream& crackedkeystream, int* crackroot, int i, LockCracker cracker) {
+void WriteCrackedSafesToFile(ofstream& crackedsafestream, ofstream& crackedkeystream, int i, LockCracker cracker) {
 	crackedsafestream << "NS" << i << "\n" << cracker;
 	for (int x = 0; x < cracker.validSolutions.size(); x++)
 	{
@@ -144,7 +144,7 @@ void WriteCrackedSafesToFile(ofstream& crackedsafestream, ofstream& crackedkeyst
 		crackedkeystream << "ROOT ";
 		for (int j = 0; j < 4; j++)
 		{
-			crackedkeystream << crackroot[j];
+			crackedkeystream << cracker.validSolutions[x].GetLock(0).GetROOT(j);
 		}
 		crackedkeystream << "\n";
 		OutputHash(cracker.validHashes[x].UHF, "UHF ", 4, crackedkeystream);
@@ -200,7 +200,7 @@ void ReadSafeToHack(string lockedfile, string crackedkeyfile, string crackedsafe
 			threads.RunThreads();
 			for (int k = 0; k < 10; k++)
 			{
-				WriteCrackedSafesToFile(crackedsafestream, crackedkeystream, crackroot, i, threads.GetCracker(k));
+				WriteCrackedSafesToFile(crackedsafestream, crackedkeystream, i, threads.GetCracker(k));
 			}
 			threads.CleanCrackers();
 			threads.CleanThreads();

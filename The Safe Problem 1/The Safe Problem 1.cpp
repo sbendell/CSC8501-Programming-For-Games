@@ -121,7 +121,7 @@ int main()
 		}
 		else {
 			clock_t start = clock();
-			ReadSafeToHack(keyfile, lockedfile, crackedkeyfile, crackedsafefile);
+			ReadSafeToHack(lockedfile, crackedkeyfile, crackedsafefile);
 			cout << "Cracked all safes within given locked safe file.\n";
 			clock_t end = clock();
 			cout << "\nTime taken " << double(end - start) / CLOCKS_PER_SEC << "ms";

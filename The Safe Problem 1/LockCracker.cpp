@@ -1,9 +1,8 @@
 #include "stdafx.h"
 #include "LockCracker.h"
 
-LockCracker::LockCracker(MultiLockSafe safe, int* Root, vector<int*> LNs)
+LockCracker::LockCracker(int* Root, vector<int*> LNs)
 {
-	realSafe = safe;
 	MultiLockSafe newSafe(5);
 	for (int i = 0; i < 4; i++)
 	{
@@ -31,76 +30,59 @@ LockCracker::~LockCracker()
 }
 
 ostream& operator<<(ostream& ostr, const LockCracker& lc) {
-	ostr << lc.crackSafe;
+	for (int i = 0; i < lc.validSolutions.size(); i++)
+	{
+		ostr << "Candidate Solution " << i << "\n" << lc.validSolutions[i];
+	}
 	return ostr;
 }
 
-bool LockCracker::CrackFirstLockCN() {
+void LockCracker::SetHash(int* hash, int first, int second, int third, int fourth) {
+	while (first < 0) {
+		first = first + 10;
+	}
+	while (second < 0) {
+		second = second + 10;
+	}
+	while (third < 0) {
+		third = third + 10;
+	}
+	while (fourth < 0) {
+		fourth = fourth + 10;
+	}
+	hash[0] = first;
+	hash[1] = second;
+	hash[2] = third;
+	hash[3] = fourth;
+}
+
+bool LockCracker::CrackAllCN() {
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
 			for (int k = 0; k < 10; k++)
 			{
-				for (int h = 0; h < 10; h++)
+				for (int l = 0; l < 10; l++)
 				{
-					if ((realSafe.GetLock(0).GetCN(0) == i && realSafe.GetLock(0).GetCN(1) == j)
-						&& (realSafe.GetLock(0).GetCN(2) == k && realSafe.GetLock(0).GetCN(3) == h))
+					SetHash(hashes.UHF, i, j, k, l);
+					SetHash(hashes.LHF, UHFLHF[0] - i, UHFLHF[1] - j, UHFLHF[2] - k, UHFLHF[3] - l);
+					for (int x = 0; x < crackSafe.GetSize(); x++)
 					{
-						crackSafe.GetLock(0).SetCN(i, 0);
-						crackSafe.GetLock(0).SetCN(j, 1);
-						crackSafe.GetLock(0).SetCN(k, 2);
-						crackSafe.GetLock(0).SetCN(h, 3);
-						return true;
+						crackSafe.GetLock(x).SetCN(crackSafe.GetLock(x).GetROOT(0) + hashes.UHF[0], 0);
+						crackSafe.GetLock(x).SetCN(crackSafe.GetLock(x).GetROOT(1) + hashes.UHF[1], 1);
+						crackSafe.GetLock(x).SetCN(crackSafe.GetLock(x).GetROOT(2) + hashes.UHF[2], 2);
+						crackSafe.GetLock(x).SetCN(crackSafe.GetLock(x).GetROOT(3) + hashes.UHF[3], 3);
+					}
+					if (crackSafe.IsValid()) {
+						validSolutions.push_back(crackSafe);
+						validHashes.push_back(hashes);
 					}
 				}
 			}
 		}
 	}
 	return false;
-}
-
-void LockCracker::CrackAllCN() {
-	int LNdifference[4];
-	for (int i = 0; i < 4; i++)
-	{
-		LNdifference[i] = crackSafe.GetLock(1).GetLN(i) - crackSafe.GetLock(0).GetLN(i);
-		while (LNdifference[i] < 0) {
-			LNdifference[i] = LNdifference[i] + 10;
-		}
-	}
-
-	for (int i = 1; i < crackSafe.GetSize(); i++)
-	{
-		for (int x = 0; x < 4; x++)
-		{
-			crackSafe.GetLock(i).SetCN(crackSafe.GetLock(i-1).GetCN(x) + LNdifference[x], x);
-		}
-	}
-}
-
-void LockCracker::CrackUHF() {
-	int UHF[4];
-	for (int i = 0; i < 4; i++)
-	{
-		UHF[i] = crackSafe.GetLock(0).GetCN(i) - crackSafe.GetLock(0).GetROOT(i);
-		while (UHF[i] < 0) {
-			UHF[i] = UHF[i] + 10;
-		}
-		hashes.UHF[i] = UHF[i];
-	}
-}
-
-void LockCracker::CrackLHF() {
-	int LHF[4];
-	for (int i = 0; i < 4; i++)
-	{
-		LHF[i] = crackSafe.GetLock(0).GetLN(i) - crackSafe.GetLock(0).GetCN(i);
-		while (LHF[i] < 0) {
-			LHF[i] = LHF[i] + 10;
-		}
-		hashes.LHF[i] = LHF[i];
-	}
 }
 
 void LockCracker::CrackPHF() {
@@ -112,7 +94,11 @@ void LockCracker::CrackPHF() {
 		while(totalHash[i] < 0) {
 			totalHash[i] = totalHash[i] + 10;
 		}
-		PHF[i] = totalHash[i] - (hashes.UHF[i] + hashes.LHF[i]);
+		UHFLHF[i] = crackSafe.GetLock(0).GetLN(i) - crackSafe.GetLock(0).GetROOT(i);
+		while (UHFLHF[i] < 0) {
+			UHFLHF[i] = UHFLHF[i] + 10;
+		}
+		PHF[i] = totalHash[i] - UHFLHF[i];
 		while(PHF[i] < 0) {
 			PHF[i] = PHF[i] + 10;
 		}
@@ -126,16 +112,16 @@ void LockCracker::CrackAllHN() {
 		for (int x = 0; x < 4; x++)
 		{
 			crackSafe.GetLock(i).SetHN(crackSafe.GetLock(i).GetLN(x) + hashes.PHF[x], x);
+			if (i > 0) {
+				crackSafe.GetLock(i).SetROOT(crackSafe.GetLock(i-1).GetHN(x), x);
+			}
 		}
 	}
 }
 
 void LockCracker::CrackSafe()
 {
-	CrackFirstLockCN();
-	CrackAllCN();
-	CrackUHF();
-	CrackLHF();
 	CrackPHF();
 	CrackAllHN();
+	CrackAllCN();
 }

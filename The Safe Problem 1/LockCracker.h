@@ -16,21 +16,21 @@ struct Hashes {
 class LockCracker
 {
 public:
-	LockCracker(MultiLockSafe safe, int* Root, vector<int*> LNs);
+	LockCracker(int* Root, vector<int*> LNs);
 	LockCracker();
 	~LockCracker();
 	friend ostream& operator<<(ostream& ostr, const LockCracker& lc);
 	Hashes& GetHashes() { return hashes; }
+	vector<MultiLockSafe> validSolutions;
+	vector<Hashes> validHashes;
 private:
 	void CrackSafe();
-	void CrackAllCN();
-	void CrackUHF();
-	void CrackLHF();
+	void SetHash(int hash[4], int first, int second, int third, int fourth);
+	bool CrackAllCN();
 	void CrackPHF();
 	void CrackAllHN();
-	bool CrackFirstLockCN();
 	MultiLockSafe crackSafe;
-	MultiLockSafe realSafe;
 	Hashes hashes;
+	int UHFLHF[4];
 };
 

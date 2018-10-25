@@ -15,10 +15,20 @@ void OutputHash(int* hash, string hashname, int size, ofstream& stream) {
 	for (int i = 0; i < size; i++)
 	{
 		if (i == 0) {
-			stream << hashname << hash[i];
+			if (hash[i] > 0) {
+				stream << hashname << '+' << hash[i];
+			}
+			else {
+				stream << hashname << hash[i];
+			}
 		}
 		else {
-			stream << "," << hash[i];
+			if (hash[i] > 0) {
+				stream << "," << '+' << hash[i];
+			}
+			else {
+				stream << "," << hash[i];
+			}
 		}
 	}
 	stream << "\n";
@@ -65,11 +75,19 @@ void ParseHashes(int* hash, ifstream& stream) {
 	for (int i = 0; i < 4; i++)
 	{
 		if (i == 0) {
+			stream >> c;
 			stream >> hash[i];
+			if (c == '-') {
+				hash[i] = hash[i] * -1;
+			}
 		}
 		else {
 			stream >> c;
+			stream >> c;
 			stream >> hash[i];
+			if (c == '-') {
+				hash[i] = hash[i] * -1;
+			}
 		}
 	}
 }
